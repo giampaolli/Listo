@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "685091950181",
+    "firebase_url": "https://listoapp-2018.firebaseio.com",
+    "project_id": "listoapp-2018",
+    "storage_bucket": "listoapp-2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685091950181:android:c7d0203b9c1c59b0",
+        "android_client_info": {
+          "package_name": "com.example.milenal.listoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685091950181-sbn35gth1gnf9kcmp9oo3b3armughnjd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.milenal.listoapp",
+            "certificate_hash": "30963edbd0e43b34e432d57ddb274784bf87287e"
+          }
+        },
+        {
+          "client_id": "685091950181-1vggqd096bso05tnjjtjnmg7gc9o37oa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBltPytuzIjjjly-h66HlYQPJiKIOYtI9Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685091950181-1vggqd096bso05tnjjtjnmg7gc9o37oa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
