@@ -1,13 +1,13 @@
-package com.example.milenal.listoapp;
+package com.example.milenal.listoapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class EsqueciSenha extends AppCompatActivity {
+public class Calendar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_esqueci_senha);
+        setContentView(R.layout.activity_calendar);
     }
 }
