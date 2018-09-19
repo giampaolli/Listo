@@ -55,33 +55,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btRegister(View view){
-        startActivity(new Intent(this, User.class));
+        startActivity(new Intent(this, Register.class));
     }
 
     public void btForgotPassword(View view){
         startActivity(new Intent(this, ForgotPassword.class));
     }
 
-    buttonEntrar.setOnClickListener(new View.OnClickListener(){
-        public void onClick(View v){
-            String txtEmail = textEmail.toString().trim();
-            String txtSenha = textSenha.toString().trim();
+    //Realiza o login
+    public void btLogin(View view){
+        String email = textEmail.toString().trim();
+        String senha = textSenha.toString().trim();
 
-            if (!txtEmail.isEmpty()){
-                if(!txtSenha.isEmpty()){
-                    usuario = new User();
-                    usuario.setEmail();
-                    usuario.setSenha();
-                    validateLogin();
-                }else{
-                    Toast.makeText(MainActivity.this, "Preencha a senha", Toast.LENGTH_SHORT).show();
-                }
+        if(!email.isEmpty()){
+            if(!senha.isEmpty()){
+                usuario = new User();
+                usuario.setEmail(email);
+                usuario.setSenha(senha);
             }else{
-                Toast.makeText(MainActivity.this, "Preencha o email", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Preencha a senha", Toast.LENGTH_SHORT).show();
             }
+        }else{
+            Toast.makeText(MainActivity.this, "Preencha o email", Toast.LENGTH_SHORT).show();
         }
-    });
+        validateLogin();
+    }
 
+    //Faz a validação do login
     private void validateLogin() {
         auth = Conection.getFirebaseAuth();
         auth.signInWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
