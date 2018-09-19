@@ -29,8 +29,16 @@ public class ForgotPassword extends AppCompatActivity {
     }
 
     private void startComponents() {
-        edtEmail = findViewById(R.id.etdEmail);
+        edtEmail = findViewById(R.id.edtEmail);
         btnResetSenha = findViewById(R.id.btnReset);
+
+        btnResetSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = edtEmail.getText().toString().trim();
+                resetPasword(email);
+            }
+        });
     }
 
     @Override
@@ -38,13 +46,6 @@ public class ForgotPassword extends AppCompatActivity {
         super.onStart();
         auth = Conection.getFirebaseAuth();
     }
-
-    btnResetSenha.setOnClickListener(new View.OnClickListener(){
-        public void onClick (View v){
-            String email = edtEmail.getText().toString().trim();
-            resetPasword(email);
-        }
-    });
 
     private void resetPasword(String email) {
         auth.sendPasswordResetEmail(email)
