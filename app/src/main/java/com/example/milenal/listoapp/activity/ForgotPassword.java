@@ -29,8 +29,8 @@ public class ForgotPassword extends AppCompatActivity {
     }
 
     private void startComponents() {
-        //edtEmail = findViewById(R.id.etdEmail);
-        //btnResetSenha = findViewById(R.id.btnReset);
+        edtEmail = findViewById(R.id.etdEmail);
+        btnResetSenha = findViewById(R.id.btnReset);
     }
 
     @Override
