@@ -85,8 +85,8 @@ public class User extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             alert("Cadastro realizado com sucesso");
-                            Intent intent = new Intent(User.this, Progression.class);
-                            startActivity(intent);
+                            //Intent intent = new Intent(User.this, Progression.class);
+                            //startActivity(intent);
                             finish();
                         }else{
                             alert("Erro de cadastro");

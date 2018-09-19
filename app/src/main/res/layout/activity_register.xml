@@ -3,7 +3,173 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.Register">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivBackground2"
+        android:layout_width="422dp"
+        android:layout_height="715dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="638dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txtEmail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtEmail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintStart_toStartOf="@+id/txtEmail2"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail2" />
+
+    <TextView
+        android:id="@+id/txtNomeCompleto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="Nome Completo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail2" />
+
+    <EditText
+        android:id="@+id/edtNomeCompleto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/txtNomeCompleto"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeCompleto" />
+
+    <TextView
+        android:id="@+id/txtDataNascimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="Data de Nascimento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomeCompleto" />
+
+    <EditText
+        android:id="@+id/edtDataNascimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/txtDataNascimento"
+        app:layout_constraintTop_toBottomOf="@+id/txtDataNascimento" />
+
+    <TextView
+        android:id="@+id/txtDataIntegracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:text="Data de Integração"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtDataNascimento" />
+
+    <EditText
+        android:id="@+id/edtDataIntegracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/txtDataIntegracao"
+        app:layout_constraintTop_toBottomOf="@+id/txtDataIntegracao" />
+
+    <TextView
+        android:id="@+id/txtRamo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Ramo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtDataIntegracao" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/autocompleteRamo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecionar Ramo"
+        app:layout_constraintStart_toStartOf="@+id/txtRamo"
+        app:layout_constraintTop_toBottomOf="@+id/txtRamo" />
+
+    <TextView
+        android:id="@+id/txtCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cargo"
+        app:layout_constraintBottom_toTopOf="@+id/autocompleteCargo"
+        app:layout_constraintStart_toStartOf="@+id/autocompleteCargo" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/autocompleteCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Selecionar Cargo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autocompleteRamo" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="246dp" />
+
+    <TextView
+        android:id="@+id/txtSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:text="Senha"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="341dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="368dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
