@@ -44,7 +44,7 @@ public class User extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro);
+        setContentView(R.layout.activity_register);
         startComponents();
         clickEvent();
     }
