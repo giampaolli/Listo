@@ -105,14 +105,14 @@ public class Register extends AppCompatActivity {
     }*/
 
     public void startComponents(){
-        txtEmail = findViewById(R.id.txtEmail);
+        txtEmail = findViewById(R.id.txtEmail2);
         txtNome = findViewById(R.id.txtNomeCompleto);
         txtDataNasc = findViewById(R.id.txtDataNascimento);
         txtDataInte = findViewById(R.id.txtDataIntegracao);
         txtRamo = findViewById(R.id.txtRamo);
         txtCargo = findViewById(R.id.txtCargo);
         txtSenha = findViewById(R.id.txtSenha);
-        edtEmail = findViewById(R.id.edtEmail);
+        edtEmail = findViewById(R.id.edtEmail2);
         edtNome = findViewById(R.id.edtNomeCompleto);
         edtDataNasc = findViewById(R.id.edtDataNascimento);
         edtDataInte = findViewById(R.id.edtDataIntegracao);
