@@ -5,12 +5,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.example.milenal.listoapp.R;
 
-public class Progression extends AppCompatActivity {
+public class ProgressionScout extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBar;
@@ -18,7 +16,7 @@ public class Progression extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progression);
+        setContentView(R.layout.activity_progression_scout);
         startComponents();
 
         drawerLayout.addDrawerListener(actionBar);

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openProgression() {
-        startActivity(new Intent(this, Progression.class));
+        startActivity(new Intent(this, ProgressionScout.class));
         //finish();
     }
 
