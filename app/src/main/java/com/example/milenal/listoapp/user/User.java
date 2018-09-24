@@ -114,7 +114,7 @@ public class User extends AppCompatActivity {
         edtSenha = findViewById(R.id.edtSenha);
         autocompleteRamo = findViewById(R.id.autocompleteRamo);
         autcompleteCargo = findViewById(R.id.autocompleteCargo);
-        btnRegistrar = findViewById(R.id.btnRegistrar);
+        btnRegistrar = findViewById(R.id.btnCadastrar);
     }
 
     @Override

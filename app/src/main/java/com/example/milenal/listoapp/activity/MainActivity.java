@@ -34,24 +34,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         startComponents();
+        logar();
+    }
+
+    private void logar(){
+        buttonEntrar.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openProgression();
+                finish();
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        verifyLoggedUser();
+        //verifyLoggedUser();
     }
 
     private void verifyLoggedUser() {
         auth = Conection.getFirebaseAuth();
         if(auth.getCurrentUser() != null){
             openProgression();
+            finish();
         }
     }
 
     private void openProgression() {
-        startActivity(new Intent(this, Progression.class));
-        finish();
+        startActivity(new Intent(this, ProgressionScout.class));
+        //finish();
     }
 
     public void btRegister(View view){
@@ -66,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
     public void btLogin(View view){
         String email = textEmail.toString().trim();
         String senha = textSenha.toString().trim();
+
+        openProgression();
 
         if(!email.isEmpty()){
             if(!senha.isEmpty()){
@@ -107,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+        openProgression();
     }
 
     private void startComponents(){

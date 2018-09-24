@@ -22,7 +22,10 @@
         <activity android:name=".activity.Register" />
         <activity android:name=".activity.Calendar" />
         <activity android:name=".activity.Songbook" />
-        <activity android:name=".activity.Progression"></activity>
+        <activity android:name=".activity.ProgressionScout" />
+        <activity android:name=".activity.ProgressionWolf" />
+        <activity android:name=".activity.ProgressionSenior"/>
+        <activity android:name=".activity.ProgressionRoover"/>
     </application>
 
 </manifest>
