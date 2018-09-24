@@ -8,4 +8,35 @@
     tools:context=".activity.ProgressionSenior"
     tools:showIn="@layout/app_bar_progression_senior">
 
+    <ScrollView
+        android:id="@+id/scrollViewSenior"
+        android:layout_width="368dp"
+        android:layout_height="439dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:id="@+id/lnSenior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <ImageView
+            android:id="@+id/promessaEscoteiraSenior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/promessa_escoteira"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="30dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBarSenior"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="167dp"
+            tools:layout_editor_absoluteY="144dp" />
+
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
