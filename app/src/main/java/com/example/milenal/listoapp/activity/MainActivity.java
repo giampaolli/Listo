@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editEmail, editSenha;
     private Button buttonEntrar;
-    private TextView textEmail, textSenha, textEsqueciSenha, textNovoUsuario;
     private User usuario;
     private FirebaseAuth auth;
 
@@ -33,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        auth = Conection.getFirebaseAuth();
+        auth.signOut();
         startComponents();
         logar();
     }
+
+    //Criar um metodo para logout
 
     private void logar(){
         buttonEntrar.setOnClickListener(new OnClickListener() {
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openProgression() {
-        startActivity(new Intent(this, ProgressionScout.class));
+        startActivity(new Intent(this, ProgressionSenior.class));
         //finish();
     }
 
@@ -76,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Realiza o login
     public void btLogin(View view){
-        String email = textEmail.toString().trim();
-        String senha = textSenha.toString().trim();
+        String email = editEmail.getText().toString().trim();
+        String senha = editSenha.getText().toString().trim();
 
         openProgression();
 
@@ -121,16 +124,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-        openProgression();
     }
 
     private void startComponents(){
         editEmail = findViewById(R.id.edEmail);
         editSenha = findViewById(R.id.edSenha);
-        textEmail = findViewById(R.id.txtEmail);
-        textSenha = findViewById(R.id.txtSenha);
-        textEsqueciSenha = findViewById(R.id.txtEsqueciSenha);
-        textNovoUsuario = findViewById(R.id.txtNovoUsuario);
         buttonEntrar = findViewById(R.id.btnEntrar);
     }
 }

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView android:id="@+id/scrollViewWolf"
+    android:layout_width="368dp"
+    android:layout_height="439dp"
+    tools:ignore="MissingConstraints"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.ProgressionWolf"
-    tools:showIn="@layout/app_bar_progression_wolf">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
-        android:id="@+id/scrollViewWolf"
-        android:layout_width="368dp"
-        android:layout_height="439dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".activity.ProgressionWolf"
+        tools:showIn="@layout/app_bar_progression_wolf">
 
-        <LinearLayout
-            android:id="@+id/ln"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            <LinearLayout
+                android:id="@+id/ln"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
 
-        <ImageView
-            android:id="@+id/promessaLobo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/promessa_ramo_lobo"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="30dp" />
+            <ImageView
+                android:id="@+id/promessaLobo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/promessa_ramo_lobo"
+                tools:layout_editor_absoluteX="155dp"
+                tools:layout_editor_absoluteY="30dp" />
 
-        <ProgressBar
-            android:id="@+id/progressBarLobo"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="168dp"
-            tools:layout_editor_absoluteY="138dp" />
-
-    </ScrollView>
-</android.support.constraint.ConstraintLayout>
+            <ProgressBar
+                android:id="@+id/progressBarLobo"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="168dp"
+                tools:layout_editor_absoluteY="138dp" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

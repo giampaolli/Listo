@@ -23,8 +23,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class Register extends AppCompatActivity {
 
-    private TextView txtEmail, txtNome, txtDataNasc, txtDataInte, txtRamo, txtCargo, txtSenha;
-    private EditText edtEmail, edtNome, edtDataNasc, edtDataInte, edtSenha;
+        private EditText edtEmail, edtNome, edtDataNasc, edtDataInte, edtSenha;
     private MultiAutoCompleteTextView autoRamo, autoCargo;
     private Button btnCadastrar;
     private User usuario;
@@ -39,21 +38,21 @@ public class Register extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = edtEmail.toString().trim();
-                String nome = edtNome.toString().trim();
+                String email = edtEmail.getText().toString().trim();
+                String nome = edtNome.getText().toString().trim();
                 //String dataNasc = edtDataNasc.toString().trim();
                 //String dataInte = edtDataInte.toString().trim();
                 //String ramo = autoRamo.toString().trim();
                 //String cargo = autoCargo.toString().trim();
-                String senha = edtSenha.toString().trim();
+                String senha = edtSenha.getText().toString().trim();
 
                 //Validação se os campos estão preenchidos
                 if(!email.isEmpty()){
-                    if(!nome.isEmpty()){
+                    //if(!nome.isEmpty()){
                         if(!senha.isEmpty()){
                             usuario = new User();
                             usuario.setEmail(email);
-                            usuario.setNome(nome);
+                            //usuario.setNome(nome);
                             //usuario.setData_nascimento(dataNasc);
                             //usuario.setData_integracao(dataInte);
                             //usuario.setRamo(ramo);
@@ -63,9 +62,9 @@ public class Register extends AppCompatActivity {
                         }else{
                             Toast.makeText(Register.this, "Preencha a senha.", Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(Register.this, "Preencha o nome", Toast.LENGTH_SHORT).show();
-                    }
+//                    }else{
+//                        Toast.makeText(Register.this, "Preencha o nome", Toast.LENGTH_SHORT).show();
+//                    }
                 }else{
                     Toast.makeText(Register.this, "Preencha o email", Toast.LENGTH_SHORT).show();
                 }
@@ -75,11 +74,13 @@ public class Register extends AppCompatActivity {
 
     public void insertUser(){
         auth = Conection.getFirebaseAuth();
+
         auth.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            Toast.makeText(Register.this, "Cadastro realizado com sucesso.", Toast.LENGTH_SHORT).show();
                             finish();
                         }else{
                             String exception = "";
@@ -100,18 +101,7 @@ public class Register extends AppCompatActivity {
                 });
     }
 
-    /*public void btRegistrar(View view ){
-        FirebaseAuth firebaseAuth =  Conection.getFirebaseAuth();
-    }*/
-
     public void startComponents(){
-        txtEmail = findViewById(R.id.txtEmail2);
-        txtNome = findViewById(R.id.txtNomeCompleto);
-        txtDataNasc = findViewById(R.id.txtDataNascimento);
-        txtDataInte = findViewById(R.id.txtDataIntegracao);
-        txtRamo = findViewById(R.id.txtRamo);
-        txtCargo = findViewById(R.id.txtCargo);
-        txtSenha = findViewById(R.id.txtSenha);
         edtEmail = findViewById(R.id.edtEmail2);
         edtNome = findViewById(R.id.edtNomeCompleto);
         edtDataNasc = findViewById(R.id.edtDataNascimento);
