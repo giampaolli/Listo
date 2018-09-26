@@ -2,9 +2,6 @@ package com.example.milenal.listoapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -74,9 +71,11 @@ public class ProgressionSenior extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.biblioteca) {
-            //startActivity(new Intent(this, Libe.class));
-        } else if (id == R.id.cancioneiro) {
+        if (id == R.id.agenda) {
+            startActivity(new Intent(this, Calendar.class));
+        }else if (id == R.id.biblioteca){
+            //startActivity(new Intent(this, Calendar.class));
+        }else if (id == R.id.cancioneiro) {
             startActivity(new Intent(this, Songbook.class));
         } else if (id == R.id.sobre) {
 
