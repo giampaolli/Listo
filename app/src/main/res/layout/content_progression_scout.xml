@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/promessaSenior"
+                android:id="@+id/promessaScout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
@@ -34,22 +34,22 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/seniorEscalada"
+                    android:id="@+id/scoutPista"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/senior_escalada"
+                    app:srcCompat="@drawable/scout_pista"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
-                    android:id="@+id/seniorConquista"
+                    android:id="@+id/scoutTrilha"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/senior_conquista" />
+                    app:srcCompat="@drawable/scout_trilha" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,14 +58,24 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/seniorAzimute"
+                    android:id="@+id/scoutRumo"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/senior_azimute" />
+                    app:srcCompat="@drawable/scout_rumo" />
+
+                <ImageView
+                    android:id="@+id/scoutTravessia"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/scout_travessia" />
             </LinearLayout>
 
             <LinearLayout
@@ -75,21 +85,21 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/seniorAcaoComunitaria"
+                    android:id="@+id/scoutAcaoComunitaria"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/senior_acao_comunitaria" />
+                    app:srcCompat="@drawable/scout_acao_comunitaria" />
 
                 <ImageView
-                    android:id="@+id/seniorAprender"
+                    android:id="@+id/scoutAprender"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/senior_aprender" />
+                    app:srcCompat="@drawable/scout_aprender" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,21 +109,21 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/seniorLusofonia"
+                    android:id="@+id/scoutLusofonia"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@drawable/senior_lusofonia" />
+                    app:srcCompat="@drawable/scout_lusofonia" />
 
                 <ImageView
-                    android:id="@+id/seniorIMMA"
+                    android:id="@+id/scoutIMMA"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/senior_imma" />
+                    app:srcCompat="@drawable/scout_imma" />
             </LinearLayout>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

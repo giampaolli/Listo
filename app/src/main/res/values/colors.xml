@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="wolfColor">#F59800</color>
+    <color name="scoutColor">#016328</color>
+    <color name="seniorColor">#9C0F0C</color>
+    <color name="rooverColor">#D10A11</color>
 </resources>
