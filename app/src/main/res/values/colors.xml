@@ -4,7 +4,15 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="wolfColor">#F59800</color>
+    <color name="wolfColorDark">#d68400</color>
+    <color name="wolfColorAccent">#f9a827</color>
     <color name="scoutColor">#016328</color>
+    <color name="scoutColorDark">#005321</color>
+    <color name="scoutColorAccent">#0d7b39</color>
     <color name="seniorColor">#9C0F0C</color>
+    <color name="seniorColorDark">#8f0401</color>
+    <color name="seniorColorAccent">#c11814</color>
     <color name="rooverColor">#D10A11</color>
+    <color name="rooverColorDark">#b30006</color>
+    <color name="rooverColorAccent">#ed0109</color>
 </resources>
