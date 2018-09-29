@@ -74,7 +74,7 @@ public class ProgressionWolf extends AppCompatActivity
         if (id == R.id.agenda) {
             startActivity(new Intent(this, Calendar.class));
         }else if (id == R.id.biblioteca){
-            //startActivity(new Intent(this, Calendar.class));
+            startActivity(new Intent(this, Library.class));
         }else if (id == R.id.cancioneiro) {
             startActivity(new Intent(this, Songbook.class));
         } else if (id == R.id.sobre) {
