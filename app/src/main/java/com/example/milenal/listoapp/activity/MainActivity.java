@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.milenal.listoapp.R;
 import com.example.milenal.listoapp.conection.Conection;
+import com.example.milenal.listoapp.model.RooverList;
 import com.example.milenal.listoapp.user.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -65,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openProgression() {
-        startActivity(new Intent(this, ProgressionSenior.class));
-        //finish();
+        startActivity(new Intent(this, ProgressionRoover.class));
     }
 
     public void btRegister(View view){
@@ -131,4 +131,5 @@ public class MainActivity extends AppCompatActivity {
         editSenha = findViewById(R.id.edSenha);
         buttonEntrar = findViewById(R.id.btnEntrar);
     }
+
 }
