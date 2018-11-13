@@ -3,6 +3,8 @@
     package="com.example.milenal.listoapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -20,13 +22,14 @@
         </activity>
         <activity android:name=".activity.ForgotPassword" />
         <activity android:name=".activity.Register" />
-        <activity android:name=".activity.Calendar" />
+        <activity android:name=".activity.Planner" />
         <activity android:name=".activity.Songbook" />
         <activity android:name=".activity.ProgressionScout" />
         <activity android:name=".activity.ProgressionWolf" />
         <activity android:name=".activity.ProgressionSenior" />
         <activity android:name=".activity.ProgressionRoover" />
-        <activity android:name=".activity.Library"></activity>
+        <activity android:name=".activity.Library" />
+        <activity android:name=".activity.Book"></activity>
     </application>
 
 </manifest>
