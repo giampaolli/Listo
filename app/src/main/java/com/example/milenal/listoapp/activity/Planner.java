@@ -11,7 +11,7 @@ import com.prolificinteractive.materialcalendarview.OnDateLongClickListener;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
-public class Calendar extends AppCompatActivity
+public class Planner extends AppCompatActivity
         implements OnDateSelectedListener, OnMonthChangedListener, OnDateLongClickListener{
 
     MaterialCalendarView materialCalendarView = findViewById(R.id.calendarView);

@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.milenal.listoapp.R;
-import com.example.milenal.listoapp.model.RooverList;
 
 public class ProgressionRoover extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -73,7 +72,7 @@ public class ProgressionRoover extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.agenda) {
-            startActivity(new Intent(this, Calendar.class));
+            startActivity(new Intent(this, Planner.class));
         }else if (id == R.id.biblioteca){
             startActivity(new Intent(this, Library.class));
         }else if (id == R.id.cancioneiro) {
