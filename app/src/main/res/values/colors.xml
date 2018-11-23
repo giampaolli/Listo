@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="wolfColor">#F59800</color>
     <color name="wolfColorDark">#d68400</color>
     <color name="wolfColorAccent">#f9a827</color>
@@ -15,4 +16,13 @@
     <color name="rooverColor">#D10A11</color>
     <color name="rooverColorDark">#b30006</color>
     <color name="rooverColorAccent">#ed0109</color>
+
+    <color name="teal500">#009688</color>
+    <color name="white">#ffffff</color>
+    <color name="off_white">#FAFAFA</color>
+    <color name="background">#E0E0E0</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#03A7E9</color>
+    <color name="grey">#757575</color>
+    <color name="red">#ed2121</color>
 </resources>
