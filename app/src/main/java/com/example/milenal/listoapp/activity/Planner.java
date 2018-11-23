@@ -1,42 +1,79 @@
 package com.example.milenal.listoapp.activity;
 
-import android.support.annotation.NonNull;
+import android.content.Intent;
+import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.example.milenal.listoapp.R;
-import com.prolificinteractive.materialcalendarview.CalendarDay;
-import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import com.prolificinteractive.materialcalendarview.OnDateLongClickListener;
-import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
-import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
+import com.example.milenal.listoapp.model.MyEventDay;
 
-public class Planner extends AppCompatActivity
-        implements OnDateSelectedListener, OnMonthChangedListener, OnDateLongClickListener{
+import java.util.ArrayList;
+import java.util.List;
 
-    MaterialCalendarView materialCalendarView = findViewById(R.id.calendarView);
+public class Planner extends AppCompatActivity {
+
+    public static final String RESULT = "result";
+    public static final String EVENT = "event";
+    private static final int ADD_NOTE = 44;
+
+    private CalendarView calendarView;
+    private FloatingActionButton floatingButton;
+    private List<EventDay> eventDays = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.activity_main);
 
-        materialCalendarView.setOnDateChangedListener(this);
-        materialCalendarView.setOnMonthChangedListener(this);
+        calendarView = findViewById(R.id.calendarView);
+        floatingButton = findViewById(R.id.floatingActionButton);
+
+        floatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNote();
+            }
+        });
+
+        calendarView.setOnDayClickListener(new OnDayClickListener() {
+            @Override
+            public void onDayClick(EventDay eventDay) {
+                previewNote(eventDay);
+            }
+        });
     }
 
     @Override
-    public void onDateSelected(@NonNull MaterialCalendarView materialCalendarView, @NonNull CalendarDay calendarDay, boolean selected) {
-
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == ADD_NOTE && resultCode == RESULT_OK){
+            MyEventDay myEventDay = data.getParcelableExtra(RESULT);
+            try {
+                calendarView.setDate(myEventDay.getCalendar());
+            } catch (OutOfDateRangeException e) {
+                e.printStackTrace();
+            }
+            eventDays.add(myEventDay);
+            calendarView.setEvents(eventDays);
+        }
     }
 
-    @Override
-    public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay calendarDay) {
-
+    private void addNote() {
+        Intent intent = new Intent(this, AddNoteActivity.class);
+        startActivityForResult(intent, ADD_NOTE);
     }
 
-    @Override
-    public void onDateLongClick(@NonNull MaterialCalendarView materialCalendarView, @NonNull CalendarDay calendarDay) {
-
+    private void previewNote(EventDay eventDay) {
+        Intent intent = new Intent(this, NotePreviewActivity.class);
+        if(eventDay instanceof MyEventDay){
+            intent.putExtra(EVENT, (MyEventDay) eventDay);
+        }
+        startActivity(intent);
     }
 }

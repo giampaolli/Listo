@@ -10,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.milenal.listoapp.R;
+import com.example.milenal.listoapp.model.RooverList;
 
 public class ProgressionRoover extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -88,8 +90,8 @@ public class ProgressionRoover extends AppCompatActivity
         return true;
     }
 
-    public void clickList(){
-        startActivity(new Intent(this, ProgressionSenior.class));
+    public void clickList(View view){
+        startActivity(new Intent(this, RooverList.class));
     }
 
 }
