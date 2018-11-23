@@ -29,7 +29,10 @@
         <activity android:name=".activity.ProgressionSenior" />
         <activity android:name=".activity.ProgressionRoover" />
         <activity android:name=".activity.Library" />
-        <activity android:name=".activity.Book"></activity>
+        <activity android:name=".activity.Book" />
+        <activity android:name=".activity.CalendarActivity" />
+        <activity android:name=".activity.AddNoteActivity" />
+        <activity android:name=".activity.NotePreviewActivity"/>
     </application>
 
 </manifest>
