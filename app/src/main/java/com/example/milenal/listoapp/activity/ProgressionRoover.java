@@ -80,7 +80,7 @@ public class ProgressionRoover extends AppCompatActivity
         }else if (id == R.id.cancioneiro) {
             startActivity(new Intent(this, Songbook.class));
         } else if (id == R.id.sobre) {
-
+            startActivity(new Intent(this, Lista.class));
         } else if (id == R.id.sair)  {
 
         }

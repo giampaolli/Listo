@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 import com.applandeo.materialcalendarview.CalendarView;
 import com.example.milenal.listoapp.R;
-import com.example.milenal.listoapp.model.MyEventDay;
 
 public class AddNoteActivity extends AppCompatActivity {
 

@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.applandeo.materialcalendarview.EventDay;
 import com.example.milenal.listoapp.R;
-import com.example.milenal.listoapp.model.MyEventDay;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,7 +26,6 @@ public class NotePreviewActivity extends AppCompatActivity {
             Object event = intent.getParcelableExtra(Planner.EVENT);
             if(event instanceof MyEventDay){
                 MyEventDay myEventDay = (MyEventDay)event;
-                getSupportActionBar().setTitle(getFormattedDate(myEventDay.getCalendar().getTime()));
                 note.setText(myEventDay.getNote());
                 return;
             }

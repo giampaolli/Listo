@@ -12,7 +12,6 @@ import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.example.milenal.listoapp.R;
-import com.example.milenal.listoapp.model.MyEventDay;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.milenal.listoapp.model;
+package com.example.milenal.listoapp.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Parcel;
