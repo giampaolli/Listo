@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.applandeo.materialcalendarview.CalendarView;
 import com.example.milenal.listoapp.R;
@@ -26,11 +27,16 @@ public class AddNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent returnIntent = new Intent();
-                MyEventDay myEventDay = new MyEventDay(datePicker.getSelectedDate(),
-                        R.drawable.ic_pet, noteEditText.getText().toString());
-                returnIntent.putExtra(Planner.RESULT, myEventDay);
-                setResult(Activity.RESULT_OK, returnIntent);
-                finish();
+
+                if(noteEditText.getText().length() == 0){
+                    Toast.makeText(AddNoteActivity.this, "Preencha uma anotação.", Toast.LENGTH_SHORT).show();
+                }else{
+                    MyEventDay myEventDay = new MyEventDay(datePicker.getSelectedDate(),
+                            R.drawable.ic_pet, noteEditText.getText().toString());
+                    returnIntent.putExtra(Planner.RESULT, myEventDay);
+                    setResult(Activity.RESULT_OK, returnIntent);
+                    finish();
+                }
             }
         });
     }
