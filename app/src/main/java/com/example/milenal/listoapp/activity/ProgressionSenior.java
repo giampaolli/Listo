@@ -1,11 +1,13 @@
 package com.example.milenal.listoapp.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -80,7 +82,24 @@ public class ProgressionSenior extends AppCompatActivity
         } else if (id == R.id.sobre) {
 
         } else if (id == R.id.sair)  {
+            AlertDialog alertDialog;
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Sair");
+            builder.setMessage("Deseja sair?");
+            builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
+                }
+            });
+            alertDialog = builder.create();
+            alertDialog.show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

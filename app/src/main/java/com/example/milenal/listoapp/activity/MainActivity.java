@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
         logar();
     }
 
-    //Criar um metodo para logout
-
     private void logar(){
         buttonEntrar.setOnClickListener(new OnClickListener() {
             @Override
