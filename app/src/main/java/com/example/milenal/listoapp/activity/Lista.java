@@ -25,7 +25,7 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
         recyclerView = findViewById(R.id.selection_list);
         recyclerView.setLayoutManager(layoutManager);
         List<Item> selectableItems = generateItems();
-        adapter = new SelectableAdapter(this,selectableItems,false);
+        adapter = new SelectableAdapter(this,selectableItems,true);
         recyclerView.setAdapter(adapter);
     }
 

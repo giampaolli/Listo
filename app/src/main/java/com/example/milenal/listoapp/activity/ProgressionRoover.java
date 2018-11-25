@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.milenal.listoapp.R;
-import com.example.milenal.listoapp.model.RooverList;
 
 public class ProgressionRoover extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -89,9 +88,4 @@ public class ProgressionRoover extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    public void clickList(View view){
-        startActivity(new Intent(this, RooverList.class));
-    }
-
 }

@@ -7,12 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.milenal.listoapp.R;
 import com.example.milenal.listoapp.conection.Conection;
-import com.example.milenal.listoapp.model.RooverList;
 import com.example.milenal.listoapp.user.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
