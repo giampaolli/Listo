@@ -15,6 +15,8 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
 
     RecyclerView recyclerView;
     SelectableAdapter adapter;
+    Listas listas;
+    List<Item> createList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,10 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.selection_list);
         recyclerView.setLayoutManager(layoutManager);
-        List<Item> selectableItems = generateItems();
+        //List<Item> selectableItems = generateItems();
+        List<Item> selectableItems = createList;
+//        List<Item> selectableItems = listas.insigniaLusofonia();
+//        List<Item> selectableItems = compromemetimentoCidadania();
         adapter = new SelectableAdapter(this,selectableItems,true);
         recyclerView.setAdapter(adapter);
     }
@@ -40,9 +45,11 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
 
     @Override
     public void onItemSelected(SelectableItem selectableItem) {
-
         List<Item> selectedItems = adapter.getSelectedItems();
-//        Snackbar.make(recyclerView,"Selected item is "+selectableItem.getName()+
-//                ", Totally  selectem item count is "+selectedItems.size(),Snackbar.LENGTH_LONG).show();
     }
+
+    public void setCreateList(List<Item> createList) {
+        this.createList = createList;
+    }
+
 }

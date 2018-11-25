@@ -16,8 +16,12 @@ import android.view.View;
 
 import com.example.milenal.listoapp.R;
 
+import java.util.List;
+
 public class ProgressionRoover extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Listas listas = new Listas();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,4 +111,10 @@ public class ProgressionRoover extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public List<Item> getListas(){
+
+        return listas.compromemetimentoCidadania();
+    }
+
 }

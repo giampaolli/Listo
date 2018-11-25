@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class Register extends AppCompatActivity {
 
-        private EditText edtEmail, edtNome, edtDataNasc, edtDataInte, edtSenha;
+    private EditText edtEmail, edtNome, edtDataNasc, edtDataInte, edtSenha;
     private MultiAutoCompleteTextView autoRamo, autoCargo;
     private Button btnCadastrar;
     private User usuario;
