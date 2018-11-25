@@ -33,6 +33,7 @@
         <activity android:name=".activity.CalendarActivity" />
         <activity android:name=".activity.AddNoteActivity" />
         <activity android:name=".activity.NotePreviewActivity"/>
+        <activity android:name=".activity.Lista"/>
     </application>
 
 </manifest>
