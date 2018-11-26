@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class User {
 
+    private String id;
     private String email;
     private String nome;
     private Date data_nascimento;
@@ -12,7 +13,16 @@ public class User {
     private String cargo;
     private String senha;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public User() {
+
     }
 
     public User(String email, String nome, Date data_nascimento, Date data_integracao, String ramo, String cargo, String senha) {
