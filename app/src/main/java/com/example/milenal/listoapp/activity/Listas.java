@@ -77,7 +77,7 @@ public class Listas {
         return selectableItems;
     }
 
-    public List<Item> insigniaAprender(){
+    public List<Item> insigniaAprenderPioneiro(){
         List<Item> selectableItems = new ArrayList<>();
         selectableItems.add(new Item("Participar de pelo menos dois cursos ou seminários de sua preferência, cujos temas sejam relevantes para sua vida acadêmica ou carreira profissional. Deverá ser apresentado um resumo de sua participação ao Clã Pioneiro ou algum tipo de produção que descreva sua participação e os assuntos abordados.","."));
         selectableItems.add(new Item("Montar seu currículo profissional, relacionando suas aptidões, iniciativas de formação pessoas e outras experiências relevantes.","."));
