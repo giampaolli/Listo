@@ -3,11 +3,10 @@ package com.example.milenal.listoapp.activity;
 public class Item {
 
     private String name;
-    private String surname;
+    private Boolean isSelected = Boolean.FALSE;
 
-    public Item(String name, String surname) {
+    public Item(String name) {
         this.name = name;
-        this.surname = surname;
     }
 
     public Item() {
@@ -21,12 +20,12 @@ public class Item {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public Boolean getSelected() {
+        return isSelected;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setSelected(Boolean selected) {
+        isSelected = selected;
     }
 
     @Override

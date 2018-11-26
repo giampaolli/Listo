@@ -64,7 +64,9 @@ public class Register extends AppCompatActivity {
                             usuario.setRamo(ramo);
                             //usuario.setCargo(cargo);
                             usuario.setSenha(senha);
-                            reference.child("User").setValue(usuario);
+                            String id = reference.child("Users").getKey();
+                            usuario.setId(id);
+                            reference.child("users").setValue(usuario);
                             insertUser();
                         }else{
                             Toast.makeText(Register.this, "Preencha a senha.", Toast.LENGTH_SHORT).show();

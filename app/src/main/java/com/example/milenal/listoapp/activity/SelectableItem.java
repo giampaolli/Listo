@@ -2,11 +2,11 @@ package com.example.milenal.listoapp.activity;
 
 public class SelectableItem extends Item {
 
-    private boolean isSelected = false;
+    private boolean isSelected;
 
     public SelectableItem(Item item, boolean isSelected){
-        super(item.getName(), item.getSurname());
-        this.isSelected = isSelected;
+        super(item.getName());
+        this.isSelected = item.getSelected();
     }
 
     public boolean isSelected(){

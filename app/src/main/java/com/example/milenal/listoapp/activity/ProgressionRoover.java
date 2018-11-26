@@ -112,11 +112,6 @@ public class ProgressionRoover extends AppCompatActivity
         return true;
     }
 
-    public List<Item> getListas(){
-
-        return listas.compromemetimentoCidadania();
-    }
-
     public void selectItem(View view) {
         String selectImage = view.getTag().toString();
         Intent myIntent = new Intent(this, Lista.class);

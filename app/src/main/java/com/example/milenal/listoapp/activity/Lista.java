@@ -17,7 +17,8 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
     RecyclerView recyclerView;
     SelectableAdapter adapter;
     Listas listas = new Listas();
-    List<Item> selectableItems;
+    List<Item> selectableItems = new ArrayList<Item>();
+    List<Item> tempList = new ArrayList<Item>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,13 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
 
         Intent myIntent = getIntent();
         String selectImage = myIntent.getStringExtra("selectImage");
-        selectableItems = getSelectedList(selectImage);
-
+        tempList = getSelectedList(selectImage);
+        int count = 0;
+        for ( Item i : tempList ){
+            i.setSelected(false);
+            selectableItems.add(i);
+            count++;
+        }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.selection_list);
@@ -39,9 +45,9 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
 
     public List<Item> generateItems(){
         List<Item> selectableItems = new ArrayList<>();
-        selectableItems.add(new Item("cem","karaca"));
-        selectableItems.add(new Item("sezen","aksu"));
-        selectableItems.add(new Item("baris","manco"));
+        selectableItems.add(new Item("cem"));
+        selectableItems.add(new Item("sezen"));
+        selectableItems.add(new Item("baris"));
 
         return selectableItems;
     }
@@ -60,7 +66,7 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
             case "rooverCidadania":
                 return listas.compromemetimentoCidadania();
             case "rooverAprender":
-                return listas.insigniaAprender();
+                return listas.insigniaAprenderPioneiro();
             case "rooverConeSul":
                 return listas.insigniaConeSulPioneiro();
             case "rooverLusofonia":
