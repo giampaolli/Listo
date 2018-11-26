@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.milenal.listoapp.R;
 
@@ -85,7 +86,7 @@ public class ProgressionRoover extends AppCompatActivity
         }else if (id == R.id.cancioneiro) {
             startActivity(new Intent(this, Songbook.class));
         } else if (id == R.id.sobre) {
-            startActivity(new Intent(this, Lista.class));
+            startActivity(new Intent(this, AboutApp.class));
         } else if (id == R.id.sair)  {
             AlertDialog alertDialog;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -100,7 +101,6 @@ public class ProgressionRoover extends AppCompatActivity
             builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-
                 }
             });
             alertDialog = builder.create();
