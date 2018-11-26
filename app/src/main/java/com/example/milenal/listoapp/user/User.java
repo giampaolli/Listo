@@ -25,6 +25,13 @@ public class User {
         this.senha = senha;
     }
 
+    public User(String email, String nome, String ramo, String senha){
+        this.email = email;
+        this.nome = nome;
+        this.ramo = ramo;
+        this.senha = senha;
+    }
+
     public String getEmail() {
         return email;
     }

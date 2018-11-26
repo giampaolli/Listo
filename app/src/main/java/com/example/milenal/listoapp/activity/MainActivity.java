@@ -19,6 +19,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,13 +32,19 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonEntrar;
     private User usuario;
     private FirebaseAuth auth;
+    private DatabaseReference reference;
+    String ramo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         auth = Conection.getFirebaseAuth();
         auth.signOut();
+        reference = FirebaseDatabase.getInstance().getReference();
+
         startComponents();
         logar();
     }
@@ -62,6 +74,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openProgression() {
+//        reference.child("User").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                User user = dataSnapshot.getValue(User.class);
+//                ramo = user.getRamo();
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//            }
+//        });
+//
+//        if(ramo != null){
+//            if(ramo == "Pioneiro" || ramo.equals("Pioneiro")){
+//                startActivity(new Intent(this, ProgressionRoover.class));
+//            }else if(ramo == "Senior" || ramo.equals("Senior")){
+//                startActivity(new Intent(this, ProgressionSenior.class));
+//            }else if(ramo == "Escoteiro" || ramo.equals("Escoteiro")){
+//                startActivity(new Intent(this, ProgressionScout.class));
+//            }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
+//                startActivity(new Intent(this, ProgressionWolf.class));
+//            }
+//        }
         startActivity(new Intent(this, ProgressionRoover.class));
     }
 
@@ -115,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
                                 exception = "Erro ao cadastrar usuário: " + e.getMessage();
                                 e.printStackTrace();
                             }
-
                             Toast.makeText(MainActivity.this, exception, Toast.LENGTH_SHORT).show();
                         }
                     }

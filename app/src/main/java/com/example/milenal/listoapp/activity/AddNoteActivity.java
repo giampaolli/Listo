@@ -11,8 +11,13 @@ import android.widget.Toast;
 
 import com.applandeo.materialcalendarview.CalendarView;
 import com.example.milenal.listoapp.R;
+import com.example.milenal.listoapp.conection.Conection;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AddNoteActivity extends AppCompatActivity {
+
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,8 @@ public class AddNoteActivity extends AppCompatActivity {
         final CalendarView datePicker = findViewById(R.id.datePicker);
         Button button = findViewById(R.id.addNoteButton);
         final EditText noteEditText = findViewById(R.id.noteEditText);
+
+        reference = FirebaseDatabase.getInstance().getReference();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +42,9 @@ public class AddNoteActivity extends AppCompatActivity {
                             R.drawable.ic_pet, noteEditText.getText().toString());
                     returnIntent.putExtra(Planner.RESULT, myEventDay);
                     setResult(Activity.RESULT_OK, returnIntent);
+
+                    reference.child("User").child("Event").setValue(returnIntent);
+
                     finish();
                 }
             }

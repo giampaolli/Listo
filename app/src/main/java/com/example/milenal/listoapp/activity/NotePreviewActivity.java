@@ -19,7 +19,6 @@ public class NotePreviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_preview);
 
-
         Intent intent = getIntent();
         TextView note = findViewById(R.id.note);
         if (intent != null) {

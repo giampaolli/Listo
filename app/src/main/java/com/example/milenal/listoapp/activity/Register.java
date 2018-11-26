@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
@@ -29,10 +31,14 @@ public class Register extends AppCompatActivity {
     private User usuario;
     private FirebaseAuth auth;
 
+    private DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        reference = FirebaseDatabase.getInstance().getReference();
 
         startComponents();
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +48,7 @@ public class Register extends AppCompatActivity {
                 String nome = edtNome.getText().toString().trim();
                 //String dataNasc = edtDataNasc.toString().trim();
                 //String dataInte = edtDataInte.toString().trim();
-                //String ramo = autoRamo.toString().trim();
+                String ramo = autoRamo.getText().toString().trim();
                 //String cargo = autoCargo.toString().trim();
                 String senha = edtSenha.getText().toString().trim();
 
@@ -55,9 +61,10 @@ public class Register extends AppCompatActivity {
                             //usuario.setNome(nome);
                             //usuario.setData_nascimento(dataNasc);
                             //usuario.setData_integracao(dataInte);
-                            //usuario.setRamo(ramo);
+                            usuario.setRamo(ramo);
                             //usuario.setCargo(cargo);
                             usuario.setSenha(senha);
+                            reference.child("User").setValue(usuario);
                             insertUser();
                         }else{
                             Toast.makeText(Register.this, "Preencha a senha.", Toast.LENGTH_SHORT).show();
