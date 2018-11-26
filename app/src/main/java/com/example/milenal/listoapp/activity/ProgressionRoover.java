@@ -117,4 +117,11 @@ public class ProgressionRoover extends AppCompatActivity
         return listas.compromemetimentoCidadania();
     }
 
+    public void selectItem(View view) {
+        String selectImage = view.getTag().toString();
+        Intent myIntent = new Intent(this, Lista.class);
+        myIntent.putExtra("selectImage", selectImage);
+        startActivity(myIntent);
+    }
+
 }
