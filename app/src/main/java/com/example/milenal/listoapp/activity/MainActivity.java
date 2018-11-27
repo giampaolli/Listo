@@ -100,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ProgressionScout.class));
             }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
                 startActivity(new Intent(this, ProgressionWolf.class));
+            }else{
+                startActivity(new Intent(this, ProgressionRoover.class));
             }
         }else{
             startActivity(new Intent(this, ProgressionRoover.class));

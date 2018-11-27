@@ -43,9 +43,9 @@ public class ProgressionRoover extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        email = findViewById(R.id.email_nav_header);
-        name = findViewById(R.id.name_nav_header);
-        setNameEmail();
+        //email = findViewById(R.id.email_nav_header);
+        //name = findViewById(R.id.name_nav_header);
+        //setNameEmail();
     }
 
     @Override
