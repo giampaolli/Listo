@@ -21,7 +21,7 @@ public class Book extends AppCompatActivity {
         String tag = intent.getStringExtra("tag");
 
         book = findViewById(R.id.pdfView);
-        String bookName = getBook(tag);
+        String bookName = getBookRoover(tag);
         openBook(bookName);
     }
 
@@ -29,7 +29,7 @@ public class Book extends AppCompatActivity {
         book.fromAsset(nameBook).load();
     }
 
-    public String getBook(String tag){
+    public String getBookRoover(String tag){
         switch(tag){
             case "livro1":
                 return "por.pdf";
@@ -41,6 +41,49 @@ public class Book extends AppCompatActivity {
                 return "fluxograma_de_progressao_ramo_pioneiro.pdf";
             case "livro5":
                 return "caminho_para_o_sucesso.pdf";
+            default:
+                return "por.pdf";
+        }
+    }
+
+    public String getBookSenior(String tag){
+        switch(tag){
+            case "livro1":
+                return "por.pdf";
+            case "livro2":
+                return "ramo_senior_em_acao.pdf";
+            case "livro3":
+                return "fluxograma_de_progressao_ramo_senior.pdf";
+            default:
+                return "por.pdf";
+        }
+    }
+
+    public String getBookScout(String tag){
+        switch(tag){
+            case "livro1":
+                return "por.pdf";
+            case "livro2":
+                return "tropa_escoteira_em_acao.pdf";
+            case "livro3":
+                return "fluxograma_de_progressao_ramo_escoteiro.pdf";
+            case "livro4":
+                return "rumo_a_lis_de_ouro.pdf";
+            default:
+                return "por.pdf";
+        }
+    }
+
+    public String getBookWolf(String tag){
+        switch(tag){
+            case "livro1":
+                return "por.pdf";
+            case "livro2":
+                return "alcateia_em_acao.pdf";
+            case "livro3":
+                return "fluxograma_de_progressao_ramo_lobinho.pdf";
+            case "livro4":
+                return "os_livros_da_selva.pdf";
             default:
                 return "por.pdf";
         }

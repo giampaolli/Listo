@@ -33,6 +33,20 @@ public class Library extends AppCompatActivity {
         livro4.setImageResource(R.drawable.fluxograma_de_progressao_ramo_pioneiro);
         livro5.setImageResource(R.drawable.caminho_para_o_sucesso);
 
+//        //Ramo Senior
+//        livro2.setImageResource(R.drawable.ramo_senior_em_acao);
+//        livro3.setImageResource(R.drawable.fluxograma_de_progressao_ramo_senior);
+//
+//        //Ramo Escoteiro
+//        livro2.setImageResource(R.drawable.tropa_escoteira_em_acao);
+//        livro3.setImageResource(R.drawable.fluxograma_de_progressao_ramo_escoteiro);
+//        livro4.setImageResource(R.drawable.rumo_a_lis_de_ouro);
+//
+//        //Ramo Lobinho
+//        livro2.setImageResource(R.drawable.alcateia_em_acao);
+//        livro3.setImageResource(R.drawable.fluxograma_de_progressao_ramo_lobinho);
+//        livro4.setImageResource(R.drawable.os_livros_da_selva);
+
     }
 
     public void openBook(View view){
