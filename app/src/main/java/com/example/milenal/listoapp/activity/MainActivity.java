@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.milenal.listoapp.R;
@@ -33,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private User usuario;
     private FirebaseAuth auth;
     private DatabaseReference reference;
-    String ramo;
-
+    String id = new String();
+    User currentUser = new User();
+    ValueEventListener valueEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,29 +76,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openProgression() {
-//        reference.child("User").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                User user = dataSnapshot.getValue(User.class);
-//                ramo = user.getRamo();
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//            }
-//        });
-//
-//        if(ramo != null){
-//            if(ramo == "Pioneiro" || ramo.equals("Pioneiro")){
-//                startActivity(new Intent(this, ProgressionRoover.class));
-//            }else if(ramo == "Senior" || ramo.equals("Senior")){
-//                startActivity(new Intent(this, ProgressionSenior.class));
-//            }else if(ramo == "Escoteiro" || ramo.equals("Escoteiro")){
-//                startActivity(new Intent(this, ProgressionScout.class));
-//            }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
-//                startActivity(new Intent(this, ProgressionWolf.class));
-//            }
-//        }
-        startActivity(new Intent(this, ProgressionRoover.class));
+        valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Conection.getFirebaseAuth().getCurrentUser().getUid().toString();
+                id = Conection.getFirebaseAuth().getCurrentUser().getUid().toString();
+                currentUser = dataSnapshot.child("users").child(id).getValue(User.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        };
+
+        String ramo = currentUser.getRamo();
+
+        if(ramo != null){
+            if(ramo == "Pioneiro" || ramo.equals("Pioneiro")){
+                startActivity(new Intent(this, ProgressionRoover.class));
+            }else if(ramo == "Senior" || ramo.equals("Senior")){
+                startActivity(new Intent(this, ProgressionSenior.class));
+            }else if(ramo == "Escoteiro" || ramo.equals("Escoteiro")){
+                startActivity(new Intent(this, ProgressionScout.class));
+            }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
+                startActivity(new Intent(this, ProgressionWolf.class));
+            }
+        }else{
+            startActivity(new Intent(this, ProgressionRoover.class));
+        }
     }
 
     public void btRegister(View view){

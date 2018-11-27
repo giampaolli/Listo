@@ -14,8 +14,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.milenal.listoapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -23,6 +25,8 @@ public class ProgressionRoover extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Listas listas = new Listas();
+    private FirebaseAuth auth;
+    TextView email, name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,9 @@ public class ProgressionRoover extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        email = findViewById(R.id.email_nav_header);
+        name = findViewById(R.id.name_nav_header);
+        setNameEmail();
     }
 
     @Override
@@ -117,6 +124,11 @@ public class ProgressionRoover extends AppCompatActivity
         Intent myIntent = new Intent(this, Lista.class);
         myIntent.putExtra("selectImage", selectImage);
         startActivity(myIntent);
+    }
+
+    public void setNameEmail(){
+        email.setText(auth.getCurrentUser().getEmail().toString());
+        name.setText(auth.getCurrentUser().getDisplayName().toString());
     }
 
 }

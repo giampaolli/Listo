@@ -21,9 +21,7 @@ public class User {
         this.id = id;
     }
 
-    public User() {
-
-    }
+    public User() { }
 
     public User(String email, String nome, Date data_nascimento, Date data_integracao, String ramo, String cargo, String senha) {
         this.email = email;

@@ -43,7 +43,7 @@ public class AddNoteActivity extends AppCompatActivity {
                     returnIntent.putExtra(Planner.RESULT, myEventDay);
                     setResult(Activity.RESULT_OK, returnIntent);
 
-                    reference.child("User").child("Event").setValue(returnIntent);
+                    reference.child("users").child("events").setValue(returnIntent);
 
                     finish();
                 }
