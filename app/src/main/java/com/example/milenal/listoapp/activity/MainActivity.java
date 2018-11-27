@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference();
 
         startComponents();
-        logar();
+        // logar();
     }
 
     private void logar(){
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openProgression() {
-//        reference.child("User").addListenerForSingleValueEvent(new ValueEventListener() {
+//        reference.child("user").addListenerForSingleValueEvent(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {
 //                User user = dataSnapshot.getValue(User.class);
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         String email = editEmail.getText().toString().trim();
         String senha = editSenha.getText().toString().trim();
 
-        openProgression();
+//        openProgression();
 
         if(!email.isEmpty()){
             if(!senha.isEmpty()){

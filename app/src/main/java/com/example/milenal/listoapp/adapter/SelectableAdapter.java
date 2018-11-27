@@ -30,7 +30,7 @@ public class SelectableAdapter extends RecyclerView.Adapter implements Selectabl
 
         mValues = new ArrayList<>();
         for (Item item : items) {
-            mValues.add(new SelectableItem(item, false));
+            mValues.add(new SelectableItem(item));
         }
     }
 

@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.milenal.listoapp.R;
 import com.example.milenal.listoapp.adapter.SelectableAdapter;
+import com.example.milenal.listoapp.user.User;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,24 +18,22 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
 
     RecyclerView recyclerView;
     SelectableAdapter adapter;
-    Listas listas = new Listas();
     List<Item> selectableItems = new ArrayList<Item>();
-    List<Item> tempList = new ArrayList<Item>();
+    List<Item> selectList;
+    List<Boolean> userList;
+    User user;
+    Listas listas = new Listas();
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista);
-
         Intent myIntent = getIntent();
+        user = (User) myIntent.getSerializableExtra("user");
+
         String selectImage = myIntent.getStringExtra("selectImage");
-        tempList = getSelectedList(selectImage);
-        int count = 0;
-        for ( Item i : tempList ){
-            i.setSelected(false);
-            selectableItems.add(i);
-            count++;
-        }
+        switchItem(selectImage);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView = findViewById(R.id.selection_list);
@@ -41,6 +41,75 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
 
         adapter = new SelectableAdapter(this,selectableItems,true);
         recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        database.getReference().child("users").child(user.getId()).setValue(user);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        database.getReference().child("users").child(user.getId()).setValue(user);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        database.getReference().child("users").child(user.getId()).setValue(user);
+    }
+
+    @Override
+    public void onItemSelected(SelectableItem selectableItem) {
+        int count = 0;
+        for(Item item : selectList) {
+            if(item.getName().equals(selectableItem.getName())){
+                userList.add(count, selectableItem.isSelected());
+            }
+        }
+        database.getReference().child("users").child(user.getId()).setValue(user);
+
+    }
+
+    public void switchItem(String selectImage) {
+        switch (selectImage) {
+            case "promessaEscoteiraRoover":
+                selectableItems = generateItems();
+                break;
+            case "rooverComprometimento":
+                selectList = listas.compromemetimentoCidadania();
+                userList = user.getCompromemetimentoCidadania();
+                selectableItems = iterateList(user.getCompromemetimentoCidadania(),
+                        listas.compromemetimentoCidadania());
+                break;
+            case "rooverCidadania":
+                selectableItems = listas.compromemetimentoCidadania();
+                break;
+            case "rooverAprender":
+                selectList = listas.insigniaAprenderPioneiro();
+                userList = user.getInsigniaAprenderPioneiro();
+                selectableItems = iterateList(user.getInsigniaAprenderPioneiro(),
+                        listas.insigniaAprenderPioneiro());
+                break;
+            case "rooverConeSul":
+                selectableItems = listas.insigniaConeSulPioneiro();
+                break;
+            case "rooverLusofonia":
+                selectableItems = listas.insigniaLusofoniaPioneiro();
+                break;
+            case "rooverBP":
+                selectableItems = generateItems();
+                break;
+            default:
+                selectableItems = generateItems();
+                break;
+        }
+
+
+
     }
 
     public List<Item> generateItems(){
@@ -52,30 +121,18 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
         return selectableItems;
     }
 
-    @Override
-    public void onItemSelected(SelectableItem selectableItem) {
-
-    }
-
-    public List<Item> getSelectedList(String value) {
-        switch (value) {
-            case "promessaEscoteiraRoover":
-                return generateItems();
-            case "rooverComprometimento":
-                return listas.compromemetimentoCidadania();
-            case "rooverCidadania":
-                return listas.compromemetimentoCidadania();
-            case "rooverAprender":
-                return listas.insigniaAprenderPioneiro();
-            case "rooverConeSul":
-                return listas.insigniaConeSulPioneiro();
-            case "rooverLusofonia":
-                return listas.insigniaLusofoniaPioneiro();
-            case "rooverBP":
-                return generateItems();
-            default:
-                return generateItems();
+    private List<Item> iterateList(List<Boolean> list, List<Item> values){
+        List<Item> newList = new ArrayList<>();
+        int count = 0;
+        Item item;
+        for(Item i : values) {
+            item = new Item(i.getName());
+            item.setSelected(list.get(count));
+            count++;
+            newList.add(item);
         }
+
+        return newList;
     }
 
 }
