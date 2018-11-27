@@ -4,7 +4,7 @@ public class SelectableItem extends Item {
 
     private boolean isSelected;
 
-    public SelectableItem(Item item, boolean isSelected){
+    public SelectableItem(Item item){
         super(item.getName());
         this.isSelected = item.getSelected();
     }

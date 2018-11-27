@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference();
 
         startComponents();
-        logar();
+        // logar();
     }
 
     private void logar(){
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         String email = editEmail.getText().toString().trim();
         String senha = editSenha.getText().toString().trim();
 
-        openProgression();
+//        openProgression();
 
         if(!email.isEmpty()){
             if(!senha.isEmpty()){

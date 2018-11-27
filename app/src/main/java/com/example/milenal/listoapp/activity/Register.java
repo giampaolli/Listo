@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -56,17 +57,15 @@ public class Register extends AppCompatActivity {
                 if(!email.isEmpty()){
                     //if(!nome.isEmpty()){
                         if(!senha.isEmpty()){
-                            usuario = new User();
-                            usuario.setEmail(email);
-                            //usuario.setNome(nome);
-                            //usuario.setData_nascimento(dataNasc);
-                            //usuario.setData_integracao(dataInte);
-                            usuario.setRamo(ramo);
-                            //usuario.setCargo(cargo);
-                            usuario.setSenha(senha);
-                            String id = reference.child("Users").getKey();
-                            usuario.setId(id);
-                            reference.child("users").setValue(usuario);
+//                            usuario = new User();
+//                            usuario.setEmail(email);
+//                            usuario.setNome(nome);
+//                            usuario.setData_nascimento(dataNasc);
+//                            usuario.setData_integracao(dataInte);
+//                            usuario.setRamo(ramo);
+//                            usuario.setCargo(cargo);
+//                            usuario.setSenha(senha);
+                            usuario = new User(email, nome, ramo, senha);
                             insertUser();
                         }else{
                             Toast.makeText(Register.this, "Preencha a senha.", Toast.LENGTH_SHORT).show();
@@ -89,6 +88,9 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            FirebaseUser user = Conection.getFirebaseUser();
+                            usuario.setId(user.getUid());
+                            reference.child("users").child(usuario.getId()).setValue(usuario);
                             Toast.makeText(Register.this, "Cadastro realizado com sucesso.", Toast.LENGTH_SHORT).show();
                             finish();
                         }else{

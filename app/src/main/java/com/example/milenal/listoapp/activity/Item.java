@@ -1,6 +1,8 @@
 package com.example.milenal.listoapp.activity;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
 
     private String name;
     private Boolean isSelected = Boolean.FALSE;
