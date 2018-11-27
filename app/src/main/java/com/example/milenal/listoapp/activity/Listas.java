@@ -147,9 +147,6 @@ public class Listas {
         selectableItems.add(new Item("Ensinar a Alcateia a cantar uma canção escoteira de outro país do Cone Sul."));
         selectableItems.add(new Item("Conhecer as principais terminologias do Ramo Lobinho (Alcateia, Matilha, acampamento, etc) em castelhano ou em outro idioma falado em países do Cone Sul, como o guarani."));
         selectableItems.add(new Item("Conhecer os nomes e os símbolos das Associações Escoteiras dos países que integram o Cone Sul."));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -163,16 +160,6 @@ public class Listas {
         selectableItems.add(new Item("Participar de pelo menos três boas ações coletivas com sua Alcateia, contribuindo com ideias e ações para o planejamento e execução das atividades."));
         selectableItems.add(new Item("Participar de uma ação comunitária promovida por alguma instituição de sua comunidade: igreja, clube, escola, posto de saúde, polícia, bombeiros, casa comercial, etc. e fazer um relatório sobre essa participação."));
         selectableItems.add(new Item("Planejar e executar uma boa ação, diferente das realizadas anteriormente, que seja útil em sua Alcateia, casa, escola ou comunidade, com duração mínima de um mês, apresentando posteriormente os resultados para sua Alcateia."));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -194,7 +181,6 @@ public class Listas {
         selectableItems.add(new Item("Descobrir quais distintivos o Lobinho poderia conquistar se fosse de outro país lusófono."));
         selectableItems.add(new Item("Fazer uma lista de termos escoteiros utilizados em outro país lusófono."));
         selectableItems.add(new Item("Conhecer o símbolo das Associações Escoteiras dos países lusófonos."));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -209,8 +195,6 @@ public class Listas {
         selectableItems.add(new Item("Preparar e aplicar para sua patrulha ou tropa um jogo ou técnica escoteira relacionando-o a uma das matérias estudadas na escola."));
         selectableItems.add(new Item("Participar de um grupo de estudo ou trabalho em grupo sobre determinada matéria."));
         selectableItems.add(new Item("Realizar uma reflexão pessoal sobre seu ambiente escolar, analisando os pontos positivos e pontos que podem ser melhorados. A reflexão deverá ser compartilhada com pelo menos um de seus professores."));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -236,7 +220,6 @@ public class Listas {
         selectableItems.add(new Item("Pesquisar locais em outro país do Cone Sul, indicando onde poderiam ser realizadas atividades como: trilhas, acampamentos, escaladas, travessias, etc e divulgar no site da seção ou do Grupo Escoteiro."));
         selectableItems.add(new Item("Pesquisar os principais pontos turísticos de pelo menos dois países do Cone Sul."));
         selectableItems.add(new Item("Montar um quadro comparativo contendo as principais diferenças de clima, flora, fauna e relevo de pelo menos 3 países do Cone Sul."));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -251,7 +234,6 @@ public class Listas {
         selectableItems.add(new Item("Cuja execução ocupe um período mínimo de 3 meses de duração;"));
         selectableItems.add(new Item("Cujo conteúdo esteja relacionado a uma das áreas seguintes: Ciência e Tecnologia, Saúde e Meio Ambiente, Cultura e Artes, e Paz e Compreensão;"));
         selectableItems.add(new Item("Que seja apresentado relatório final com todos os dados e resultados do projeto."));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -278,8 +260,6 @@ public class Listas {
         selectableItems.add(new Item("Pesquisar locais em outro país lusófono onde poderiam fazer trilhas, acampamentos, escaladas, travessias, etc e divulgar no site da seção ou do Grupo Escoteiro"));
         selectableItems.add(new Item("Pesquisar pontos turísticos em outro país lusófono e apresentar à seção"));
         selectableItems.add(new Item("Montar um quadro comparativo contendo as principais diferenças de clima, flora, fauna e relevo de pelo menos 3 países lusófonos."));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -295,7 +275,6 @@ public class Listas {
         selectableItems.add(new Item("Participar de algum projeto ou atividade extracurricular oferecido pela sua escola. Relatar sua experiência ao escotista."));
         selectableItems.add(new Item("Selecionar uma notícia sobre um assunto relevante na atualidade, realizando pesquisa sobre o tema em diferentes fontes e meios de comunicação. Escrever uma crítica sobre o tema, citando as fontes pesquisadas e seu ponto de vista sobre o tema."));
         selectableItems.add(new Item("Participar ativamente do Grêmio Estudantil de sua escola."));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -331,9 +310,6 @@ public class Listas {
         selectableItems.add(new Item("Cuja execução ocupe um período mínimo de 4 meses de duração;"));
         selectableItems.add(new Item("Cujo conteúdo esteja relacionado a uma das Prioridades do Milênio definidas pela Organização das Nações Unidas"));
         selectableItems.add(new Item("Que seja apresentado relatório final com todos os dados e resultados do projeto"));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
@@ -354,8 +330,6 @@ public class Listas {
         selectableItems.add(new Item("Preparar um roteiro de viagem para outro país lusófono, considerando os pontos turísticos a serem visitados, transporte, orçamento e campanha financeira, segurança e cronograma de ações."));
         selectableItems.add(new Item("Visitar outro país lusófono, fazendo uma apresentação posterior a sua seção, mostrando fotos e vídeos dos locais visitados, principais traços culturais, gastronomia, curiosidades, etc."));
         selectableItems.add(new Item("Elaborar um projeto de atividade aventureira em outro país lusófono."));
-        selectableItems.add(new Item(""));
-        selectableItems.add(new Item(""));
 
         return selectableItems;
     }
