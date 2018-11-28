@@ -73,8 +73,9 @@ public class ProgressionRoover extends AppCompatActivity
         }catch (Exception e){
             System.out.print(e);
         }
-        //email = findViewById(R.id.email_nav_header);
-        //name = findViewById(R.id.name_nav_header);
+
+        email = findViewById(R.id.email_nav_header);
+        name = findViewById(R.id.name_nav_header);
         //setNameEmail();
     }
 
@@ -159,8 +160,8 @@ public class ProgressionRoover extends AppCompatActivity
     }
 
     public void setNameEmail(){
-        email.setText(auth.getCurrentUser().getEmail().toString());
-        name.setText(auth.getCurrentUser().getDisplayName().toString());
+        email.setText(user.getEmail());
+        name.setText(user.getNome());
     }
 
 }

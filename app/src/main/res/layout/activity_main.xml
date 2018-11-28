@@ -7,6 +7,26 @@
     tools:context=".activity.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/rooverComprometimento"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:tag="rooverComprometimento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/listo_logo"
+        tools:ignore="ContentDescription"
+        android:layout_marginTop="30dp"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/btnEntrar"
         android:layout_width="0dp"

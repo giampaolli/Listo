@@ -34,77 +34,68 @@ public class MainActivity extends AppCompatActivity {
     private User usuario;
     private FirebaseAuth auth;
     private DatabaseReference reference;
-    String id = new String();
-    User currentUser = new User();
-    ValueEventListener valueEventListener;
+    User user = new User();
+    String ramo;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        auth = Conection.getFirebaseAuth();
-        auth.signOut();
-        reference = FirebaseDatabase.getInstance().getReference();
+//        try{
+//            auth = Conection.getFirebaseAuth();
+//            FirebaseUser currentUser = Conection.getFirebaseUser();
+//            DatabaseReference ref = database.getReference("users").child(currentUser.getUid());
+//
+//            ValueEventListener userListener = new ValueEventListener() {
+//                @Override
+//                public void onDataChange(DataSnapshot dataSnapshot) {
+//                    User tst = dataSnapshot.getValue(User.class);
+////                    user = dataSnapshot.getValue(User.class);
+//                    System.out.println(tst.getRamo());
+//                }
+//
+//                @Override
+//                public void onCancelled(DatabaseError databaseError) {
+//
+//                }
+//            };
+//            ref.addValueEventListener(userListener);
+//
+//        }catch (Exception e){
+//            System.out.print(e);
+//        }
 
         startComponents();
-        // logar();
-    }
-
-    private void logar(){
-        buttonEntrar.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openProgression();
-                finish();
-            }
-        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //verifyLoggedUser();
-    }
-
-    private void verifyLoggedUser() {
-        auth = Conection.getFirebaseAuth();
-        if(auth.getCurrentUser() != null){
-            openProgression();
-            finish();
-        }
     }
 
     private void openProgression() {
-        valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //Conection.getFirebaseAuth().getCurrentUser().getUid().toString();
-                id = Conection.getFirebaseAuth().getCurrentUser().getUid().toString();
-                currentUser = dataSnapshot.child("users").child(id).getValue(User.class);
-            }
+        try {
+            auth = Conection.getFirebaseAuth();
+            FirebaseUser currentUser = Conection.getFirebaseUser();
+            reference = database.getReference("users").child(currentUser.getUid());
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        };
+            ValueEventListener userListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    user = dataSnapshot.getValue(User.class);
+                    verifyUser(user.getRamo());
+                }
 
-        String ramo = currentUser.getRamo();
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-        if(ramo != null){
-            if(ramo == "Pioneiro" || ramo.equals("Pioneiro")){
-                startActivity(new Intent(this, ProgressionRoover.class));
-            }else if(ramo == "Senior" || ramo.equals("Senior")){
-                startActivity(new Intent(this, ProgressionSenior.class));
-            }else if(ramo == "Escoteiro" || ramo.equals("Escoteiro")){
-                startActivity(new Intent(this, ProgressionScout.class));
-            }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
-                startActivity(new Intent(this, ProgressionWolf.class));
-            }else{
-                startActivity(new Intent(this, ProgressionRoover.class));
-            }
-        }else{
-            startActivity(new Intent(this, ProgressionRoover.class));
+                }
+            };
+            reference.addListenerForSingleValueEvent(userListener);
+        } catch (Exception e) {
+            System.out.print(e);
         }
     }
 
@@ -112,16 +103,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, Register.class));
     }
 
-    public void btForgotPassword(View view){
-        startActivity(new Intent(this, ForgotPassword.class));
-    }
+    public void btForgotPassword(View view){ startActivity(new Intent(this, ForgotPassword.class)); }
 
     //Realiza o login
     public void btLogin(View view){
         String email = editEmail.getText().toString().trim();
         String senha = editSenha.getText().toString().trim();
-
-//        openProgression();
 
         if(!email.isEmpty()){
             if(!senha.isEmpty()){
@@ -168,6 +155,24 @@ public class MainActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.edEmail);
         editSenha = findViewById(R.id.edSenha);
         buttonEntrar = findViewById(R.id.btnEntrar);
+    }
+
+    private void verifyUser(String ramo){
+        if(ramo != null){
+            if(ramo == "Pioneiro" || ramo.equals("Pioneiro")){
+                startActivity(new Intent(this, ProgressionRoover.class));
+            }else if(ramo == "Senior" || ramo.equals("Senior")){
+                startActivity(new Intent(this, ProgressionSenior.class));
+            }else if(ramo == "Escoteiro" || ramo.equals("Escoteiro")){
+                startActivity(new Intent(this, ProgressionScout.class));
+            }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
+                startActivity(new Intent(this, ProgressionWolf.class));
+            }else{
+                startActivity(new Intent(this, ProgressionRoover.class));
+            }
+        }else{
+            startActivity(new Intent(this, ProgressionRoover.class));
+        }
     }
 
 }
