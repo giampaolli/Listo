@@ -12,6 +12,7 @@ import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.example.milenal.listoapp.R;
+import com.example.milenal.listoapp.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Planner extends AppCompatActivity {
     public static final String RESULT = "result";
     public static final String EVENT = "event";
     private static final int ADD_NOTE = 44;
+    User user = new User();
 
     private CalendarView calendarView;
     private FloatingActionButton floatingButton;
@@ -30,6 +32,9 @@ public class Planner extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planner);
+
+        Intent myIntent = getIntent();
+        user = (User) myIntent.getSerializableExtra("user");
 
         calendarView = findViewById(R.id.calendarView);
         floatingButton = findViewById(R.id.floatingActionButton);

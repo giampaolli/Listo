@@ -35,38 +35,13 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference reference;
     User user = new User();
-    String ramo;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        try{
-//            auth = Conection.getFirebaseAuth();
-//            FirebaseUser currentUser = Conection.getFirebaseUser();
-//            DatabaseReference ref = database.getReference("users").child(currentUser.getUid());
-//
-//            ValueEventListener userListener = new ValueEventListener() {
-//                @Override
-//                public void onDataChange(DataSnapshot dataSnapshot) {
-//                    User tst = dataSnapshot.getValue(User.class);
-////                    user = dataSnapshot.getValue(User.class);
-//                    System.out.println(tst.getRamo());
-//                }
-//
-//                @Override
-//                public void onCancelled(DatabaseError databaseError) {
-//
-//                }
-//            };
-//            ref.addValueEventListener(userListener);
-//
-//        }catch (Exception e){
-//            System.out.print(e);
-//        }
-
         startComponents();
     }
 
@@ -89,9 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
+                public void onCancelled(DatabaseError databaseError) {}
             };
             reference.addListenerForSingleValueEvent(userListener);
         } catch (Exception e) {
@@ -99,9 +72,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void btRegister(View view){
-        startActivity(new Intent(this, Register.class));
-    }
+    public void btRegister(View view){ startActivity(new Intent(this, Register.class)); }
 
     public void btForgotPassword(View view){ startActivity(new Intent(this, ForgotPassword.class)); }
 
@@ -160,18 +131,29 @@ public class MainActivity extends AppCompatActivity {
     private void verifyUser(String ramo){
         if(ramo != null){
             if(ramo == "Pioneiro" || ramo.equals("Pioneiro")){
-                startActivity(new Intent(this, ProgressionRoover.class));
+                intent = new Intent(this, ProgressionRoover.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
             }else if(ramo == "Senior" || ramo.equals("Senior")){
-                startActivity(new Intent(this, ProgressionSenior.class));
+                intent = new Intent(this, ProgressionSenior.class);
+                startActivity(intent);
             }else if(ramo == "Escoteiro" || ramo.equals("Escoteiro")){
-                startActivity(new Intent(this, ProgressionScout.class));
+                intent = new Intent(this, ProgressionScout.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
             }else if(ramo == "Lobinho" || ramo.equals("Lobinho")){
-                startActivity(new Intent(this, ProgressionWolf.class));
+                intent = new Intent(this, ProgressionWolf.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
             }else{
-                startActivity(new Intent(this, ProgressionRoover.class));
+                intent = new Intent(this, ProgressionRoover.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
             }
         }else{
-            startActivity(new Intent(this, ProgressionRoover.class));
+            intent = new Intent(this, ProgressionRoover.class);
+            intent.putExtra("user", user);
+            startActivity(intent);
         }
     }
 

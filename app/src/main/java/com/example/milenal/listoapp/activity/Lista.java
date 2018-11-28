@@ -112,6 +112,7 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
                 selectList = listas.insigniaLusofoniaPioneiro();
                 userList = user.getInsigniaLusofoniaPioneiro();
                 break;
+
             default:
                 selectList = listas.insigniaLusofoniaPioneiro();
                 userList = user.getInsigniaLusofoniaPioneiro();

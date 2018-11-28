@@ -14,30 +14,69 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.milenal.listoapp.R;
+import com.example.milenal.listoapp.conection.Conection;
+import com.example.milenal.listoapp.user.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProgressionWolf extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    User user = new User();
+    private FirebaseAuth auth;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progression_wolf);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Intent myIntent = getIntent();
+        user = (User) myIntent.getSerializableExtra("user");
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        try{
+            auth = Conection.getFirebaseAuth();
+            FirebaseUser currentUser = Conection.getFirebaseUser();
+            DatabaseReference ref = database.getReference("users").child(currentUser.getUid());
+
+            ValueEventListener userListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    user = dataSnapshot.getValue(User.class);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            };
+//            ref.addListenerForSingleValueEvent(userListener);
+            ref.addValueEventListener(userListener);
+
+        }catch (Exception e){
+            System.out.print(e);
+        }
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -76,7 +115,9 @@ public class ProgressionWolf extends AppCompatActivity
         if (id == R.id.agenda) {
             startActivity(new Intent(this, Planner.class));
         }else if (id == R.id.biblioteca){
-            startActivity(new Intent(this, Library.class));
+            Intent myIntent = new Intent(this, Library.class);
+            myIntent.putExtra("user", user);
+            startActivity(myIntent);
         }else if (id == R.id.cancioneiro) {
             startActivity(new Intent(this, Songbook.class));
         } else if (id == R.id.sobre) {
@@ -102,7 +143,7 @@ public class ProgressionWolf extends AppCompatActivity
             alertDialog.show();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

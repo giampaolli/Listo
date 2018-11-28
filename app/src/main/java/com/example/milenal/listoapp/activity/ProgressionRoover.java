@@ -51,6 +51,9 @@ public class ProgressionRoover extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Intent myIntent = getIntent();
+        user = (User) myIntent.getSerializableExtra("user");
+
         try{
             auth = Conection.getFirebaseAuth();
             FirebaseUser currentUser = Conection.getFirebaseUser();
@@ -74,8 +77,8 @@ public class ProgressionRoover extends AppCompatActivity
             System.out.print(e);
         }
 
-        email = findViewById(R.id.email_nav_header);
-        name = findViewById(R.id.name_nav_header);
+//        email = findViewById(R.id.email_nav_header);
+//        name = findViewById(R.id.name_nav_header);
         //setNameEmail();
     }
 
