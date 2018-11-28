@@ -5,6 +5,22 @@ import java.util.List;
 
 public class Listas {
 
+    public List<Item> promessaRoover() {
+        List<Item> selectableItems = new ArrayList<>();
+        selectableItems.add(new Item("Conhecer a estrutura e o funcionamento do Ramo Pioneiro (Conselho de Clã, COMAD, Equipes de Interesse, etc.);"));
+        selectableItems.add(new Item("Conhecer a história do Ramo e seu Marco Simbólico;"));
+        selectableItems.add(new Item("Conhecer e compreender o lema do Ramo Pioneiro;"));
+        selectableItems.add(new Item("Conhecer a Carta Pioneira do seu Clã;"));
+        selectableItems.add(new Item("Conhecer o sistema de Progressão do Ramo Pioneiro;"));
+        selectableItems.add(new Item("Conhecer e usar corretamente a vestimenta escoteira e seus distintivos;"));
+        selectableItems.add(new Item("Conhecer os símbolos utilizados no Movimento Escoteiro;"));
+        selectableItems.add(new Item("Saber hastear e arriar a Bandeira Nacional;"));
+        selectableItems.add(new Item("Conhecer aspectos importantes da História do Escotismo e do seu Fundador;"));
+        selectableItems.add(new Item("Compreender o significado da Lei e Promessa Escoteira;"));
+
+        return  selectableItems;
+    }
+
     public List<Item> compromemetimentoCidadania(){
         List<Item> selectableItems = new ArrayList<>();
         selectableItems.add(new Item("Participar ativamente em uma campanha na área da saúde(panfletagem, logística, divulgação, aplicação, etc.) promovida por seu Município, Estado, Universidade e/ou Escola, ou organização de bairro, como por exemplo: Vacinação, DST, AIDS, etc."));
@@ -181,6 +197,170 @@ public class Listas {
         selectableItems.add(new Item("Descobrir quais distintivos o Lobinho poderia conquistar se fosse de outro país lusófono."));
         selectableItems.add(new Item("Fazer uma lista de termos escoteiros utilizados em outro país lusófono."));
         selectableItems.add(new Item("Conhecer o símbolo das Associações Escoteiras dos países lusófonos."));
+
+        return selectableItems;
+    }
+
+    public List<Item> promessaEscoteiro(){
+        List<Item> selectableItems = new ArrayList<>();
+        selectableItems.add(new Item("Conhecer a estrutura da Tropa Escoteira."));
+        selectableItems.add(new Item("Conhecer os membros de sua patrulha e os seus encargos."));
+        selectableItems.add(new Item("Entender e uso o lema do escoteiro, o sinal, a saudação e o aperto de mão."));
+        selectableItems.add(new Item("Reconhecer os sinais manuais e apitos de comandos."));
+        selectableItems.add(new Item("Saber o grito da sua patrulha e conhecer o seu significado."));
+        selectableItems.add(new Item("Conhecer o vestuário/uniforme escoteiro e o significado dos seus distintivos."));
+        selectableItems.add(new Item("Conhecer o sistema de progressão escoteiro."));
+        selectableItems.add(new Item("Saber como hastear e arriar a bandeira Nacional."));
+        selectableItems.add(new Item("Conhecer os aspectos mais importantes da história do Escotismo e da vida seu fundador."));
+        selectableItems.add(new Item("Conhecer a Lei e Promessa Escoteiras."));
+
+        return selectableItems;
+    }
+
+    public List<Item> escoteiroPistaTrilha(){
+        List<Item> selectableItems = new ArrayList<>();
+        selectableItems.add(new Item("Participar de pelo menos 5 atividades ao ar livre da patrulha (jornadas, excursões, acampamentos de patrulha ou tropa) utilizando normas de baixo impacto ambiental."));
+        selectableItems.add(new Item("Conhecer e aplicar normas de limpeza no tratamento e na conservação de alimentos nas atividades de patrulha."));
+        selectableItems.add(new Item("Aferir seu passo duplo, conhecer as medidas de seu corpo e aplicar-las em avaliações e medições."));
+        selectableItems.add(new Item("Conhecer os elementos que compõem a caixa de primeiros socorros da patrulha."));
+        selectableItems.add(new Item("Conhecer as ações iniciais que devem ser tomadas num acidente e saber como cuidar de ferimentos leves; bandagens e transporte de feridos, pequenos cortes e insetos."));
+        selectableItems.add(new Item("Aplicar medidas de segurança nas atividades de patrulha e tropa."));
+        selectableItems.add(new Item("Saber como prevenir os males da exposição ao sol: insolação, desidratação, queimaduras, câncer de pele."));
+        selectableItems.add(new Item("Manter hábitos de higiene individual, demonstrar cuidado com o vestuário ou uniforme escoteiro e utilizar corretamente os distintivos e emblemas."));
+        selectableItems.add(new Item("Classificar o lixo em diferentes categorias e saber como tratar os diferentes tipos de resíduos de acampamentos ou excursões utilizando “engenhocas” para melhorar a higiene e o conforto nos acampamentos."));
+        selectableItems.add(new Item("Participar da manutenção do canto de patrulha, conhecer os materiais de sua patrulha e contribuir para a sua conservação, organização e limpeza."));
+        selectableItems.add(new Item("Montar corretamente uma mochila para um acampamento de 3 dias e manter seu equipamento pessoal em bom estado."));
+        selectableItems.add(new Item("Montar o cardápio de uma jornada e durante as atividades de sua patrulha, fazer as refeições de maneira equilibrada."));
+        selectableItems.add(new Item("Colaborar na elaboração de alimentos (como cozinheiro ou copeiro) em pelo menos três atividades ao ar livre da patrulha; (jornadas, excursões ou acampamento de patrulha)."));
+        selectableItems.add(new Item("Montar uma solução para purificação de água em acampamentos."));
+        selectableItems.add(new Item("Utilizar diversos tipos de fogos de acampamento, de maneira adequada e segura."));
+        selectableItems.add(new Item("Organizar seu tempo utilizando uma agenda ou instrumento similar."));
+        selectableItems.add(new Item("Realizar, dentro do prazo, as suas tarefas escolares."));
+        selectableItems.add(new Item("Frequentar regularmente as atividades e reuniões da sua patrulha e da tropa."));
+        selectableItems.add(new Item("Realizar regularmente uma atividade física ou o esporte que escolheu."));
+        selectableItems.add(new Item("Participar de diversos jogos com sua patrulha e tropa respeitando as regras e aos demais participantes."));
+        selectableItems.add(new Item("Traçar e seguir sinais de pista em um percurso de pelo menos 500 metros em área de campo, e pelo menos 1.000 metros em área urbana."));
+        selectableItems.add(new Item("Utilizar um mapa e uma bússola para orientar-se."));
+        selectableItems.add(new Item("Aplicar as técnicas de “tocaia” em um jogo com sua patrulha ou tropa."));
+        selectableItems.add(new Item("Explorar com sua patrulha ou tropa a comunidade onde vive, identificando problemas e buscando soluções."));
+        selectableItems.add(new Item("Estimar altura e distâncias utilizando distintos métodos."));
+        selectableItems.add(new Item("Ler um livro e após a leitura apresentar um resumo a patrulha."));
+        selectableItems.add(new Item("Saber utilizar alguma técnica de previsão do tempo por indícios naturais."));
+        selectableItems.add(new Item("Participar de, pelo menos, dois jogos democráticos de sua tropa."));
+        selectableItems.add(new Item("Participar ativamente de seu conselho de patrulha contribuindo com ideias e pontos de vista."));
+        selectableItems.add(new Item("Participar da organização e planejamento de uma excursão de patrulha; e contribuir com ideias para as atividades de patrulha ou tropa."));
+        selectableItems.add(new Item("Avaliar as atividades juntamente com sua patrulha ou tropa."));
+        selectableItems.add(new Item("Demonstrar que utiliza as especialidades que conquista para colaborar em sua patrulha, casa ou escola."));
+        selectableItems.add(new Item("Ajudar um escoteiro da patrulha a conquistar uma especialidade."));
+        selectableItems.add(new Item("Participar de um fogo de conselho e de uma apresentação com sua patrulha."));
+        selectableItems.add(new Item("Construir, com sucata, um instrumento musical."));
+        selectableItems.add(new Item("Conhecer e cantar algumas canções e danças tradicionais do Movimento Escoteiro e de sua tropa, em especial, o Hino Alerta."));
+        selectableItems.add(new Item("Ler e escrever mensagens usando um código secreto de sua patrulha."));
+        selectableItems.add(new Item("Utilizar corretamente um rádio comunicador numa atividade de sua patrulha."));
+        selectableItems.add(new Item("Montar um blog, lista de e-mails ou projeto similar que contribua para melhorar a comunicação em sua patrulha ou tropa."));
+        selectableItems.add(new Item("Participar ativamente da construção de pioneiras num acampamento de tropa, aplicando pelo menos os seguintes nós e amarras: direito, volta do fiel ou volta da ribeira, nó de escota, amarra quadrada e diagonal."));
+        selectableItems.add(new Item("Saber utilizar e conservar as ferramentas típicas de uma patrulha (machadinha, facão, etc.) e demonstrar os cuidados básicos com os utensílios de campo (como lampiões e fogareiros)."));
+        selectableItems.add(new Item("Participar da construção de um fogão suspenso ou forno de acampamento."));
+        selectableItems.add(new Item("Propor objetivos e ações para melhorar em alguns aspectos da sua vida."));
+        selectableItems.add(new Item("Participar da avaliação de sua progressão pessoal e das de seus companheiros em conselho de patrulha."));
+        selectableItems.add(new Item("Avaliar o seu desempenho e o de seus companheiros nos cargos de patrulha."));
+        selectableItems.add(new Item("Explicar o significado da Lei e da Promessa Escoteiras aos novos integrantes da sua patrulha."));
+        selectableItems.add(new Item("Participar corretamente das cerimônias com os símbolos nacionais e saber cantar o Hino Nacional."));
+        selectableItems.add(new Item("Explicar, a partir do seu ponto de vista, o que significa ser leal."));
+        selectableItems.add(new Item("Aplicar o conceito de lealdade em jogos e atividades de sua patrulha e tropa."));
+        selectableItems.add(new Item("Participar como animador em um acampamento de sua patrulha."));
+        selectableItems.add(new Item("Conhecer historias de pessoas que se sobrepuseram em momentos difíceis e os relatar aos seus companheiros de patrulha."));
+        selectableItems.add(new Item("Respeitar e apoiar as decisões tomadas no conselho de patrulha, ainda que não esteja de acordo."));
+        selectableItems.add(new Item("Ajudar a melhorar a organização de seu conselho de patrulha."));
+        selectableItems.add(new Item("Participar da eleição do monitor da sua patrulha."));
+        selectableItems.add(new Item("Pesquisar os malefícios de drogas e entorpecentes."));
+        selectableItems.add(new Item("Contribuir na manutenção de livro de patrulha."));
+        selectableItems.add(new Item("Participar de um turno de ronda em um acampamento de tropa."));
+        selectableItems.add(new Item("Registrar, em algum tipo de diario ou arquivo, os principais momentos da sua historia pessoal."));
+        selectableItems.add(new Item("Participar de um debate sobre um filme ou um documentário com temática ambiental ou social."));
+        selectableItems.add(new Item("Participar ativamente nas assembleias expressando sua opinião de forma respeitosa."));
+        selectableItems.add(new Item("Propor temas para debater em seu conselho de patrulha."));
+        selectableItems.add(new Item("Participar da avaliação de um acampamento de tropa."));
+        selectableItems.add(new Item("Auxiliar a um novo integrante da patrulha a se ambientar."));
+        selectableItems.add(new Item("Convidar sua patrulha para uma reunião em sua residência."));
+        selectableItems.add(new Item("Participar de atividades nas quais se promove a igualdade de direitos e deveres entre as pessoas."));
+        selectableItems.add(new Item("Compartilhar por igual com seus irmãos as tarefas domésticas."));
+        selectableItems.add(new Item("Investigar sobre mulheres que se destacaram na história de nosso país."));
+        selectableItems.add(new Item("Participar de uma cerimônia com a presença dos pais, responsáveis ou irmãos."));
+        selectableItems.add(new Item("Participar de uma atividade de sua patrulha junto aos seus pais, responsáveis, irmãos."));
+        selectableItems.add(new Item("Solicitar ajuda dos seus pais ou familiares para capacitar a patrulha em algum tema de interesse (por exemplo: cozinha, mecânica, pintura, etc.)."));
+        selectableItems.add(new Item("Investigar sobre a vida de pessoas que lutaram pelos direitos humanos no Brasil e no mundo, e apresentar para a Tropa."));
+        selectableItems.add(new Item("Participar de atividades nas quais se divulga a Declaração Universal dos Direitos Humanos."));
+        selectableItems.add(new Item("Assumir distintas responsabilidades nas atividades de sua patrulha e sua tropa."));
+        selectableItems.add(new Item("Colaborar para definição de metas da sua patrulha."));
+        selectableItems.add(new Item("Assumir e desempenhar satisfatoriamente um cargo na patrulha."));
+        selectableItems.add(new Item("Participar das decisões que toma seu conselho de patrulha, contribuindo com ideias, votando e assumindo responsabilidades em distintas tarefas, atividades e projetos."));
+        selectableItems.add(new Item("Participar ativamente de uma Assembleia de Tropa, analisando as normas de convivência e propondo melhorias."));
+        selectableItems.add(new Item("Estudar sobre a organização do Escotismo brasileiro e apresentar o resultado para sua patrulha ou tropa."));
+        selectableItems.add(new Item("Conhecer a estrutura de um grupo escoteiro."));
+        selectableItems.add(new Item("Realizar boas ações individuais e participar de boas ações coletivas com sua patrulha ou tropa."));
+        selectableItems.add(new Item("Participar de um MutCom."));
+        selectableItems.add(new Item("Fazer um croqui da área onde reside, identificando os serviços públicos de seu bairro."));
+        selectableItems.add(new Item("Conhecer a localização e número de telefone dos distintos serviços públicos de seu bairro."));
+        selectableItems.add(new Item("Participar, junto com sua patrulha, de uma comemoração típica de sua região."));
+        selectableItems.add(new Item("Participar de um jantar festivo na tropa, representando um estado diferente do seu."));
+        selectableItems.add(new Item("Pesquisar e colocar em prática alguns jogos e atividades típicas dos habitantes da região onde você vive."));
+        selectableItems.add(new Item("Participar de um evento cívico, com sua patrulha ou tropa."));
+        selectableItems.add(new Item("Explicar aos novos integrantes de sua patrulha os significados da flor de lis e saudação escoteira."));
+        selectableItems.add(new Item("Conhecer a história de seu grupo escoteiro e seus símbolos."));
+        selectableItems.add(new Item("Participar de uma atividade, distrital, regional e ou Jamboree Nacional."));
+
+
+        return selectableItems;
+    }
+
+    public List<Item> escoteiroRumoTravessia(){
+        List<Item> selectableItems = new ArrayList<>();
+        selectableItems.add(new Item("Participar de pelo menos 5 atividades ao ar livre da patrulha (acampamentos ou excursões) utilizando normas de baixo impacto ambiental."));
+        selectableItems.add(new Item("Saber explicar as mudanças que estão acontecendo no seu corpo; conhecer os males da anorexia, bulimia, os perigos do álcool e cigarro e manter hábitos de higiene pessoal."));
+        selectableItems.add(new Item("Participar de uma Jornada de Travessia."));
+        selectableItems.add(new Item("Reconhecer os tipos mais comuns de animais venenosos e peçonhentos de sua região."));
+        selectableItems.add(new Item("Manter em dia os elementos que compõem a caixa de primeiros socorros da patrulha."));
+        selectableItems.add(new Item("Aplicar medidas gerais de segurança em caso de acidentes, e saber determinar a ordem de prioridades quando assistir a um acidente e utilizar distintas técnicas para o transporte de feridos."));
+        selectableItems.add(new Item("Saber agir em casos de hemorragia."));
+        selectableItems.add(new Item("Participar de uma atividade de limpeza e organização do canto de patrulha (em sede)."));
+        selectableItems.add(new Item("Propor e executar uma atividade de melhoria em algum local visitado pela patrulha em acampamentos e manter em ordem seu quarto e objetos pessoais."));
+        selectableItems.add(new Item("Demonstrar cuidado com seu vestuário ou uniforme escoteiro e costurar os seus distintivos e insígnias."));
+        selectableItems.add(new Item("Montar corretamente uma mochila para um acampamento de cinco dias e manter o equipamentos de sua patrulha em bom estado."));
+        selectableItems.add(new Item("Preparar cinco refeições para sua patrulha, incluindo a preparação de um prato quente e de uma sobremesa sendo três refeições em fogueira ou fogão de campo."));
+        selectableItems.add(new Item("Montar o cardápio de um acampamento de patrulha de fim de semana e fazer as refeições de maneira equilibrada, durante as atividades de patrulha."));
+        selectableItems.add(new Item("Cozinhar ao ar livre sem utensílios (comida mateira), respeitando as normas de limpeza."));
+        selectableItems.add(new Item("Organizar suas atividades em um calendário semanal."));
+        selectableItems.add(new Item("Classificar suas atividades segundo um critério de prioridades."));
+        selectableItems.add(new Item("Participar regularmente das atividades e reuniões de sua patrulha, contribuindo com ideias e sugestões para as atividades."));
+        selectableItems.add(new Item("Desenvolver um passatempo ou hobbie."));
+        selectableItems.add(new Item("Realizar regularmente uma atividade física ou esporte, demonstrando progresso em seu desempenho."));
+        selectableItems.add(new Item("Participar de diversos jogos com outros grupos escoteiros, respeitando as regras e os demais participantes."));
+        selectableItems.add(new Item("Realizar previsão do tempo por indícios naturais e por instrumentos."));
+        selectableItems.add(new Item("Traçar e seguir sinais de pista em um percurso de, pelo menos, 1 km no campo ou 2 km em área urbana."));
+        selectableItems.add(new Item("Orientar-se utilizando recursos naturais (estrelas, método do relógio), assim como usando uma bússola e um mapa."));
+        selectableItems.add(new Item("Ler pelo menos um capítulo do livro “Escotismo para Rapazes”"));
+        selectableItems.add(new Item("Participar de, pelo menos, três jogos democráticos da tropa."));
+        selectableItems.add(new Item("Participar da avaliação de uma atividade regional."));
+        selectableItems.add(new Item("Explorar algum tema de seu interesse e compartilho com sua patrulha ou tropa."));
+        selectableItems.add(new Item("Aplicar técnicas de medição de distância ou altura em uma atividade de patrulha ou tropa."));
+        selectableItems.add(new Item("Preparar materiais para as representações artísticas de sua patrulha ou tropa."));
+        selectableItems.add(new Item("Organizar um dia de jogos na casa de um companheiro de patrulha."));
+        selectableItems.add(new Item("Propor e colaborar na organização de atividades de sua patrulha e tropa."));
+        selectableItems.add(new Item("Organizar no seu colégio uma atividade de divulgação do grupo escoteiro."));
+        selectableItems.add(new Item("Aplicar as especialidades em ações de serviço da comunidade."));
+        selectableItems.add(new Item("Ajudar a outros jovens na conquista das especialidades."));
+        selectableItems.add(new Item("Propor a sua patrulha e tropa ideias de ações a serviço da comunidade."));
+        selectableItems.add(new Item("Ser responsável por apresentar as canções, durante o fogo de conselho de um acampamento de tropa."));
+        selectableItems.add(new Item("Organizar e participar um esquete de um fogo de conselho da tropa."));
+        selectableItems.add(new Item("Ensinar a outros escoteiros algumas canções tradicionais do movimento."));
+        selectableItems.add(new Item("Construir um fogão solar e utilizar para uma refeição em um acampamento de patrulha ou tropa."));
+        selectableItems.add(new Item("Construir um chuveiro de acampamento."));
+        selectableItems.add(new Item("Saber como funcionam os serviços que uso (telefone, internet, rádio, TV...) e procuro usar estes conhecimentos para solucionar problemas técnicos habituais."));
+        selectableItems.add(new Item("Conhecer e ser capaz de enviar e receber mensagens simples com uma das seguintes formas de comunicação: morse, semáfora, LIBRAS."));
+        selectableItems.add(new Item("Desenhar um croqui de um lugar de acampamento utilizando sinais topográficos, e participar do projeto e instalação das pioneirias de acampamento, aplicando pelo menos os seguintes nós e amarras: direito, volta do fiel ou volta da ribeira, nó de escota, nó em oito, volta redonda com dois cotes, amarra quadrada e diagonal."));
+        selectableItems.add(new Item("Aplicar os conceitos básicos de estruturas (cavaletes, encaixes, ancoragens) nos projetos e montagem de construções como pontes, balsas, etc."));
+        selectableItems.add(new Item("Confeccionar “falcaças”, nó “catau”, laís de guia, cadeira de bombeiro e demonstrar os cuidados básicos com as cordas."));
 
         return selectableItems;
     }

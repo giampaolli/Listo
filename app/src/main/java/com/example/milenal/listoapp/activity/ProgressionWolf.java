@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.milenal.listoapp.R;
 import com.example.milenal.listoapp.conection.Conection;
@@ -146,5 +147,13 @@ public class ProgressionWolf extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void selectItem(View view) {
+        String selectImage = view.getTag().toString();
+        Intent myIntent = new Intent(this, Lista.class);
+        myIntent.putExtra("user", user);
+        myIntent.putExtra("selectImage", selectImage);
+        startActivity(myIntent);
     }
 }

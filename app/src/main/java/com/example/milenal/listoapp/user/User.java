@@ -15,6 +15,7 @@ public class User implements Serializable {
     private String ramo;
     private String cargo;
     private String senha;
+    private List<Boolean> promessaRoover;
     private List<Boolean> compromemetimentoCidadania;
     private List<Boolean> insigniaAprenderPioneiro;
     private List<Boolean> insigniaConeSulPioneiro;
@@ -23,6 +24,9 @@ public class User implements Serializable {
     private List<Boolean> insigniaConeSulLobinho;
     private List<Boolean> insigniaBoaAcaoLobinho;
     private List<Boolean> insigniaLusofoniaLobinho;
+    private List<Boolean> promessaEscoteiro;
+    private List<Boolean> escoteiroPistaTrilha;
+    private List<Boolean> escoteiroRumoTravessia;
     private List<Boolean> insigniaAprenderEscoteiro;
     private List<Boolean> insigniaConeSulEscoteiro;
     private List<Boolean> insigniaAcaoComunitariaEscoteiro;
@@ -62,6 +66,7 @@ public class User implements Serializable {
         this.ramo = ramo;
         this.cargo = cargo;
         this.senha = senha;
+        this.promessaRoover = promessaRoover;
         this.compromemetimentoCidadania = compromemetimentoCidadania;
         this.insigniaAprenderPioneiro = insigniaAprenderPioneiro;
         this.insigniaConeSulPioneiro = insigniaConeSulPioneiro;
@@ -70,6 +75,9 @@ public class User implements Serializable {
         this.insigniaConeSulLobinho = insigniaConeSulLobinho;
         this.insigniaBoaAcaoLobinho = insigniaBoaAcaoLobinho;
         this.insigniaLusofoniaLobinho = insigniaLusofoniaLobinho;
+        this.promessaEscoteiro = promessaEscoteiro;
+        this.escoteiroPistaTrilha = escoteiroPistaTrilha;
+        this.escoteiroRumoTravessia = escoteiroRumoTravessia;
         this.insigniaAprenderEscoteiro = insigniaAprenderEscoteiro;
         this.insigniaConeSulEscoteiro = insigniaConeSulEscoteiro;
         this.insigniaAcaoComunitariaEscoteiro = insigniaAcaoComunitariaEscoteiro;
@@ -318,11 +326,64 @@ public class User implements Serializable {
         this.insigniaLusofoniaSenior = insigniaLusofoniaSenior;
     }
 
+    public List<Boolean> getPromessaRoover() {
+        if(promessaRoover.isEmpty()) {
+            for(int i = 0; i < 30; i++){
+                promessaRoover.add(Boolean.FALSE);
+            }
+        }
+        return promessaRoover;
+    }
+
+    public void setPromessaRoover(List<Boolean> promessaRoover) {
+        this.promessaRoover = promessaRoover;
+    }
+
+    public List<Boolean> getPromessaEscoteiro() {
+        if(promessaEscoteiro.isEmpty()) {
+            for(int i = 0; i < 30; i++){
+                promessaEscoteiro.add(Boolean.FALSE);
+            }
+        }
+        return promessaEscoteiro;
+    }
+
+    public void setPromessaEscoteiro(List<Boolean> promessaEscoteiro) {
+        this.promessaEscoteiro = promessaEscoteiro;
+    }
+
+    public List<Boolean> getEscoteiroPistaTrilha() {
+        if(escoteiroPistaTrilha.isEmpty()) {
+            for(int i = 0; i < 30; i++){
+                escoteiroPistaTrilha.add(Boolean.FALSE);
+            }
+        }
+        return escoteiroPistaTrilha;
+    }
+
+    public void setEscoteiroPistaTrilha(List<Boolean> escoteiroPistaTrilha) {
+        this.escoteiroPistaTrilha = escoteiroPistaTrilha;
+    }
+
+    public List<Boolean> getEscoteiroRumoTravessia() {
+        if(escoteiroRumoTravessia.isEmpty()) {
+            for(int i = 0; i < 30; i++){
+                escoteiroRumoTravessia.add(Boolean.FALSE);
+            }
+        }
+        return escoteiroRumoTravessia;
+    }
+
+    public void setEscoteiroRumoTravessia(List<Boolean> escoteiroRumoTravessia) {
+        this.escoteiroRumoTravessia = escoteiroRumoTravessia;
+    }
+
     public User(String email, String nome, String ramo, String senha){
         this.email = email;
         this.nome = nome;
         this.ramo = ramo;
         this.senha = senha;
+        this.promessaRoover = new ArrayList<Boolean>();
         this.compromemetimentoCidadania = new ArrayList<Boolean>();
         this.insigniaAprenderPioneiro = new ArrayList<Boolean>();
         this.insigniaConeSulPioneiro = new ArrayList<Boolean>();
@@ -331,6 +392,9 @@ public class User implements Serializable {
         this.insigniaConeSulLobinho = new ArrayList<Boolean>();
         this.insigniaBoaAcaoLobinho = new ArrayList<Boolean>();
         this.insigniaLusofoniaLobinho = new ArrayList<Boolean>();
+        this.promessaEscoteiro = new ArrayList<Boolean>();
+        this.escoteiroPistaTrilha = new ArrayList<Boolean>();
+        this.escoteiroRumoTravessia = new ArrayList<Boolean>();
         this.insigniaAprenderEscoteiro = new ArrayList<Boolean>();
         this.insigniaConeSulEscoteiro = new ArrayList<Boolean>();
         this.insigniaAcaoComunitariaEscoteiro = new ArrayList<Boolean>();
@@ -340,6 +404,7 @@ public class User implements Serializable {
         this.insigniaDesafioComunitarioSenior = new ArrayList<Boolean>();
         this.insigniaLusofoniaSenior = new ArrayList<Boolean>();
 
+        this.getPromessaRoover();
         this.getCompromemetimentoCidadania();
         this.getInsigniaAprenderPioneiro();
         this.getInsigniaConeSulPioneiro();
@@ -348,6 +413,9 @@ public class User implements Serializable {
         this.getInsigniaConeSulLobinho();
         this.getInsigniaBoaAcaoLobinho();
         this.getInsigniaLusofoniaLobinho();
+        this.getPromessaEscoteiro();
+        this.getEscoteiroPistaTrilha();
+        this.getEscoteiroRumoTravessia();
         this.getInsigniaAprenderEscoteiro();
         this.getInsigniaConeSulEscoteiro();
         this.getInsigniaAcaoComunitariaEscoteiro();
@@ -356,8 +424,6 @@ public class User implements Serializable {
         this.getInsigniaConeSulSenior();
         this.getInsigniaDesafioComunitarioSenior();
         this.getInsigniaLusofoniaSenior();
-
-
     }
 
 

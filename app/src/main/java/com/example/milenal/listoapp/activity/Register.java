@@ -4,9 +4,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +34,8 @@ public class Register extends AppCompatActivity {
     private Button btnCadastrar;
     private User usuario;
     private FirebaseAuth auth;
-
     private DatabaseReference reference;
+    String registerRamo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,22 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         reference = FirebaseDatabase.getInstance().getReference();
+
+        Spinner spinnerRamo = findViewById(R.id.spinnerRamo);
+        String[] list = getResources().getStringArray(R.array.spinnerRamo);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, list);
+        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinnerRamo.setAdapter(adapter);
+
+        spinnerRamo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                registerRamo = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
 
         startComponents();
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +68,7 @@ public class Register extends AppCompatActivity {
                 String nome = edtNome.getText().toString().trim();
                 //String dataNasc = edtDataNasc.toString().trim();
                 //String dataInte = edtDataInte.toString().trim();
-                String ramo = autoRamo.getText().toString().trim();
+                String ramo = registerRamo;
                 //String cargo = autoCargo.toString().trim();
                 String senha = edtSenha.getText().toString().trim();
 
@@ -118,7 +137,6 @@ public class Register extends AppCompatActivity {
         edtDataNasc = findViewById(R.id.edtDataNascimento);
         edtDataInte = findViewById(R.id.edtDataIntegracao);
         edtSenha = findViewById(R.id.edtSenha);
-        autoRamo = findViewById(R.id.autocompleteRamo);
         autoCargo = findViewById(R.id.autocompleteCargo);
         btnCadastrar = findViewById(R.id.btnCadastrar);
     }

@@ -29,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
+                android:tag="promessaLobo"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/wolf_promessa"
                 tools:ignore="MissingConstraints"
@@ -45,6 +46,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfPataTenra"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +57,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfSaltador"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +75,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfRastreador"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +86,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfCacador"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +105,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfAcaoComunitaria"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -110,6 +116,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfAprender"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -127,6 +134,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_weight="1"
+                    android:tag="wolfLusofonia"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -137,100 +145,125 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:tag="wolfIMMA"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:srcCompat="@drawable/wolf_imma" />
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/wolfEspecHabilidade"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/especialidade_habilidades_escoteiras" />
+                <ImageView
+                    android:id="@+id/wolfConeSul"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:tag="wolfConeSul"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/wolf_cone_sul" />
 
-            <ImageView
-                android:id="@+id/wolfEspecDesportos"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/especialidade_desportos" />
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/wolfEspecCultura"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/especialidade_cultura" />
+                <ImageView
+                    android:id="@+id/wolfEspecHabilidade"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:tag="wolfEspecHabilidade"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/especialidade_habilidades_escoteiras" />
 
-            <ImageView
-                android:id="@+id/wolfEspecServicos"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/especialidade_servicos" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/wolfEspecDesportos"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:tag="wolfEspecDesportos"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/especialidade_desportos" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/wolfEspecCiencias"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/especialidade_ciencias_tecnologias" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/wolfEspecCultura"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:tag="wolfEspecCultura"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/especialidade_cultura" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/wolfEspecServicos"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:tag="wolfEspecServicos"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/especialidade_servicos" />
+            </LinearLayout>
 
-            <ImageView
-                android:id="@+id/wolfCruzeiroSul"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/wolf_cruzeiro_sul" />
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/wolfEspecCiencias"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:tag="wolfEspecCiencias"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/especialidade_ciencias_tecnologias" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/wolfCruzeiroSul"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:tag="wolfCruzeiroSul"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/wolf_cruzeiro_sul" />
+            </LinearLayout>
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

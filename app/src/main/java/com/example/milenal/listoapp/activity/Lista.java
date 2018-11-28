@@ -85,8 +85,8 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
     public void switchItem(String selectImage) {
         switch (selectImage) {
             case "promessaEscoteiraRoover":
-                selectList = listas.compromemetimentoCidadania();
-                userList = user.getCompromemetimentoCidadania();
+                selectList = listas.promessaRoover();
+                userList = user.getPromessaRoover();
                 break;
             case "rooverComprometimento":
                 selectList = listas.compromemetimentoCidadania();
@@ -112,13 +112,169 @@ public class Lista extends AppCompatActivity implements SelectableViewHolder.OnI
                 selectList = listas.insigniaLusofoniaPioneiro();
                 userList = user.getInsigniaLusofoniaPioneiro();
                 break;
-
+            case "promessaSenior":
+                selectList = listas.promessaEscoteiro();
+                userList = user.getPromessaEscoteiro();
+                break;
+            case "seniorEscalada":
+                selectList = listas.escoteiroPistaTrilha();
+                userList = user.getEscoteiroPistaTrilha();
+                break;
+            case "seniorConquista":
+                selectList = listas.escoteiroRumoTravessia();
+                userList = user.getEscoteiroRumoTravessia();
+                break;
+            case "seniorAzimute":
+                selectList = listas.escoteiroPistaTrilha();
+                userList = user.getEscoteiroPistaTrilha();
+                break;
+            case "seniorAcaoComunitaria":
+                selectList = listas.insigniaDesafioComunitarioSenior();
+                userList = user.getInsigniaDesafioComunitarioSenior();
+                break;
+            case "seniorAprender":
+                selectList = listas.insigniaAprenderSenior();
+                userList = user.getInsigniaAprenderSenior();
+                break;
+            case "seniorLusofonia":
+                selectList = listas.insigniaLusofoniaSenior();
+                userList = user.getInsigniaLusofoniaSenior();
+                break;
+            case "seniorIMMA":
+                break;
+            case "seniorConeSul":
+                selectList = listas.insigniaConeSulSenior();
+                userList = user.getInsigniaConeSulSenior();
+                break;
+            case "seniorEspecHabilidade":
+                break;
+            case "seniorEspecDesportos":
+                break;
+            case "seniorEspecCultura":
+                break;
+            case "seniorEspecServicos":
+                break;
+            case "seniorEspecCiencias":
+                break;
+            case "seniorNaval":
+                break;
+            case "seniorAeronauta":
+                break;
+            case "seniorMateiro":
+                break;
+            case "seniorDesafioSenior":
+                break;
+            case "seniorCordaoDourado":
+                break;
+            case "seniorEscoteiroPatria":
+                break;
+            case "promessaLobo":
+                selectList = listas.promessaEscoteiro();
+                userList = user.getPromessaEscoteiro();
+                break;
+            case "wolfPataTenra":
+                break;
+            case "wolfSaltador":
+                break;
+            case "wolfRastreador":
+                break;
+            case "wolfCacador":
+                break;
+            case "wolfAcaoComunitaria":
+                selectList = listas.insigniaBoaAcaoLobinho();
+                userList = user.getInsigniaBoaAcaoLobinho();
+                break;
+            case "wolfAprender":
+                selectList = listas.insigniaAprenderLobinho();
+                userList = user.getInsigniaAprenderLobinho();
+                break;
+            case "wolfLusofonia":
+                selectList = listas.insigniaLusofoniaLobinho();
+                userList = user.getInsigniaLusofoniaLobinho();
+                break;
+            case "wolfConeSul":
+                selectList = listas.insigniaConeSulLobinho();
+                userList = user.getInsigniaConeSulLobinho();
+                break;
+            case "wolfIMMA":
+                break;
+            case "wolfEspecHabilidade":
+                break;
+            case "wolfEspecDesportos":
+                break;
+            case "wolfEspecCultura":
+                break;
+            case "wolfEspecServicos":
+                break;
+            case "wolfEspecCiencias":
+                break;
+            case "wolfCruzeiroSul":
+                break;
+            case "promessaScout":
+                selectList = listas.promessaEscoteiro();
+                userList = user.getPromessaEscoteiro();
+                break;
+            case "scoutPista":
+                selectList = listas.escoteiroPistaTrilha();
+                userList = user.getEscoteiroPistaTrilha();
+                break;
+            case "scoutTrilha":
+                selectList = listas.escoteiroPistaTrilha();
+                userList = user.getEscoteiroPistaTrilha();
+                break;
+            case "scoutRumo":
+                selectList = listas.escoteiroRumoTravessia();
+                userList = user.getEscoteiroRumoTravessia();
+                break;
+            case "scoutTravessia":
+                selectList = listas.escoteiroRumoTravessia();
+                userList = user.getEscoteiroRumoTravessia();
+                break;
+            case "scoutAcaoComunitaria":
+                selectList = listas.insigniaAcaoComunitariaEscoteiro();
+                userList = user.getInsigniaAcaoComunitariaEscoteiro();
+                break;
+            case "scoutAprender":
+                selectList = listas.insigniaAprenderEscoteiro();
+                userList = user.getInsigniaAprenderEscoteiro();
+                break;
+            case "scoutLusofonia":
+                selectList = listas.insigniaLusofoniaEscoteiro();
+                userList = user.getInsigniaLusofoniaEscoteiro();
+                break;
+            case "scoutIMMA":
+                break;
+            case "scoutConeSul":
+                selectList = listas.insigniaConeSulEscoteiro();
+                userList = user.getInsigniaConeSulEscoteiro();
+                break;
+            case "scoutEspecHabilidade":
+                break;
+            case "scoutEspecDesportos":
+                break;
+            case "scoutEspecCultura":
+                break;
+            case "scoutEspecServicos":
+                break;
+            case "scoutEspecCiencias":
+                break;
+            case "scoutGrumete":
+                break;
+            case "scoutAviador":
+                break;
+            case "scoutExplorador":
+                break;
+            case "scoutVerdeAmarelo":
+                break;
+            case "scoutVermelhoBranco":
+                break;
+            case "scoutLisOuro":
+                break;
             default:
                 selectList = listas.insigniaLusofoniaPioneiro();
                 userList = user.getInsigniaLusofoniaPioneiro();
                 break;
         }
-
         selectableItems = iterateList(userList,selectList);
 
     }

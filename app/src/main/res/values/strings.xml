@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ListoApp</string>
+    <string name="app_name">Listo</string>
     <string name="txtRegistro">Registro</string>
     <string name="title_activity_progression_wolf">ProgressionWolf</string>
 
@@ -44,5 +44,12 @@
     <string name="material_calendar_positive_button">OK</string>
     <string name="material_calendar_negative_button">Cancelar</string>
     <string name="title_activity_event">Evento</string>
+
+    <string-array name="spinnerRamo">
+        <item>Lobinho</item>
+        <item>Escoteiro</item>
+        <item>Senior</item>
+        <item>Pioneiro</item>
+    </string-array>
 
 </resources>
